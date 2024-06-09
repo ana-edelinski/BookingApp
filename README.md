@@ -1,7 +1,6 @@
 # Booking App
 
-Academic Project for courses Software Specification and Modeling and Human-Computer Interaction, <br>
-Faculty of Technical Sciences, University of Novi Sad
+Academic Project for courses Software Specification and Modeling and Human Computer Interaction, Faculty of Technical Sciences, University of Novi Sad
 
 ## About Project
 
@@ -10,6 +9,7 @@ Booking App is a WPF application developed using C# and XAML. It is designed for
 ## Used Tools
 ► Microsoft Visual Studio<br>
 ► Balsamiq Wireframes<br>
+► PlantUML<br>
 ► Draw.io
 
 ### Authors
