@@ -1,0 +1,61 @@
+﻿<Window x:Class="BookingApp.View.SignInForm"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:BookingApp.View"
+        mc:Ignorable="d"
+        Title="Sign in" Height="300" Width="450" WindowStartupLocation="CenterScreen" ResizeMode="NoResize"
+        Icon="/Resources/favicon.ico">
+    <Window.Resources>
+        <Style x:Key="LabelFontStyle" TargetType="Label">
+            <Setter Property="FontFamily" Value="Poppins"/>
+            <Setter Property="FontSize" Value="16"/>
+            <Setter Property="Foreground" Value="#333333"/>
+        </Style>
+        <Style x:Key="ButtonStyle" TargetType="Button">
+            <Setter Property="FontFamily" Value="Poppins"/>
+            <Setter Property="FontSize" Value="14"/>
+            <Setter Property="FontWeight" Value="DemiBold"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="Background" Value="#2A3C6A"/>
+            <Setter Property="Height" Value="30"/>
+            <Setter Property="Width" Value="80"/>
+            <Setter Property="Margin" Value="10"/>
+            <Setter Property="HorizontalAlignment" Value="Center"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+        </Style>
+    </Window.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="80"/>
+            <RowDefinition Height="130"/>
+            <RowDefinition Height="40"/>
+        </Grid.RowDefinitions>
+
+        <!-- Application Logo and Name -->
+        <StackPanel Grid.Row="0" Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <Label Content="BookingApp" FontSize="24" FontFamily="Montserrat" FontWeight="Bold" Foreground="#2A3C6A" HorizontalAlignment="Center" RenderTransformOrigin="0.47,1.877"/>
+        </StackPanel>
+
+        <!-- User Input Fields -->
+        <Grid Grid.Row="1" Width="290" Height="78" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="100"/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+
+            <Label Grid.Row="0" Grid.Column="0" Content="Username:" Style="{StaticResource LabelFontStyle}" VerticalAlignment="Center" FontWeight="DemiBold"/>
+            <Label Grid.Row="1" Grid.Column="0" Content="Password:" Style="{StaticResource LabelFontStyle}" VerticalAlignment="Center" FontWeight="DemiBold"/>
+            <TextBox Grid.Row="0" Grid.Column="1" Text="{Binding Path=Username, UpdateSourceTrigger=PropertyChanged}" Height="25" TextWrapping="Wrap" VerticalAlignment="Center"/>
+            <PasswordBox Name="txtPassword" Grid.Row="1" Grid.Column="1" Height="25" VerticalAlignment="Center" PreviewKeyDown="PasswordBox_PreviewKeyDown"/>
+        </Grid>
+
+        <!-- Sign In Button -->
+        <Button Grid.Row="2" Click="SignIn" Content="Sign in" Style="{StaticResource ButtonStyle}"/>
+    </Grid>
+</Window>

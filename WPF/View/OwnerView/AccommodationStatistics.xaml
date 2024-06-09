@@ -1,0 +1,166 @@
+﻿<Page x:Class="BookingApp.WPF.View.OwnerView.AccommodationStatistics"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:ns="clr-namespace:BookingApp.Applications.Utilities.Localization"
+      mc:Ignorable="d" 
+      d:DesignHeight="610" d:DesignWidth="700"
+      Title="AccommodationStatistics">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="6*"/>
+        </Grid.RowDefinitions>
+
+        <Rectangle Fill="#99000000" Margin="0,0,10,10" Grid.Row="1"/>
+        <!--Label,search, buttons area-->
+
+        <Grid Grid.Row="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <Label Content="{ns:Loc Statistics}" 
+                   Grid.Column="0" 
+                   Foreground="{DynamicResource Text}" 
+                   VerticalAlignment="Bottom" 
+                   FontSize="22" 
+                   FontWeight="Bold"/>
+            <StackPanel Grid.Column="1"
+                        HorizontalAlignment="Right"
+                        VerticalAlignment="Bottom"
+                        Margin="0,0,10,5"
+                        Orientation="Horizontal">
+                <Button x:Name="PreviousButton" 
+                        Click="PreviousButton_Click"
+                        Background="{DynamicResource Buttons}"
+                        Foreground="{DynamicResource Text}"
+                        Grid.Column="1"
+                        HorizontalAlignment="Right"
+                        VerticalAlignment="Bottom"
+                        Margin="0,0,10,0"
+                        Height="36" 
+                        Width="150"  
+                        FontSize="21"
+                        Content="{ns:Loc Previous}"/>
+                
+                <Button Command="{Binding PrintCommand}"
+                        Background="{DynamicResource Buttons}"
+                        Foreground="{DynamicResource Text}"
+                        Grid.Column="1"
+                        HorizontalAlignment="Right"
+                        VerticalAlignment="Bottom"
+                        Height="36" 
+                        Width="120"  
+                        FontSize="21"
+                        Content="{ns:Loc Print}"/>
+            </StackPanel>
+            
+
+        </Grid>
+
+        <Grid Grid.Row="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="5*"/>
+            </Grid.RowDefinitions>
+
+            <Label Content="{Binding Accommodation.Name}" 
+                   FontSize="20" 
+                   FontWeight="Bold"
+                   Grid.Row="0"
+                   Margin="15"
+                   Foreground="{DynamicResource Text}"/>
+
+
+            <StackPanel Grid.Row="1"
+                        Margin="60,30,0,0"
+                        Orientation="Horizontal"
+                        VerticalAlignment="Top">
+                <TextBlock Text="{ns:Loc Select:}"
+                           Foreground="{DynamicResource Text}"
+                           FontSize="19"
+                           VerticalAlignment="Center"/>
+                <ComboBox Margin="10,0,0,0"
+                          Height="35"
+                          Width="100"
+                          VerticalContentAlignment="Center"
+                          HorizontalContentAlignment="Center"
+                          FontSize="18"
+                          ItemsSource="{Binding ComboBoxOptions}"
+                          SelectedItem="{Binding SelectedOption}">
+                    <ComboBox.OpacityMask>
+                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                            <GradientStop Color="Black"/>
+                            <GradientStop Color="White" Offset="1"/>
+                        </LinearGradientBrush>
+                    </ComboBox.OpacityMask>
+                </ComboBox>
+
+                <Label Content="{ns:Loc The most occupied time:}"
+                       Foreground="{DynamicResource Text}"
+                       FontSize="18"
+                       Margin="80,0,0,0"/>
+                
+                <Label Content="{Binding TheBestTime}"
+                       Foreground="Gold"
+                       FontSize="18"
+                       Margin="5,0,0,0"/>
+            </StackPanel>
+
+            <DataGrid Grid.Row="1"
+                      Height="254"
+                      Width="570"
+                      IsReadOnly="True"
+                      AutoGenerateColumns="False"
+                      ItemsSource="{Binding Statistics}" 
+                      AlternationCount="1" 
+                      BorderBrush="#FF000408" 
+                      AlternatingRowBackground="#FF5B7E9A" 
+                      RowBackground="#FF4C5484">
+                <DataGrid.Background>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="Black"/>
+                        <GradientStop Color="#FF172D86" Offset="1"/>
+                    </LinearGradientBrush>
+                </DataGrid.Background>
+
+                <DataGrid.Columns>
+                    <DataGridTextColumn Width="*" Binding="{Binding Time}" IsReadOnly="True">
+                        <DataGridTextColumn.Header>
+                            <TextBlock Text="{Binding DataContext.ColumnHeaders[0],RelativeSource={RelativeSource AncestorType={x:Type DataGrid}}}" FontSize="12"/>
+                        </DataGridTextColumn.Header>
+                    </DataGridTextColumn>
+                    <DataGridTextColumn Width="auto" Binding="{Binding Reservations}" IsReadOnly="True">
+                        <DataGridTextColumn.Header>
+                            <TextBlock Text="{Binding DataContext.ColumnHeaders[1],RelativeSource={RelativeSource AncestorType={x:Type DataGrid}}}" FontSize="12"/>
+                        </DataGridTextColumn.Header>
+                    </DataGridTextColumn>
+                    <DataGridTextColumn Width="auto" Binding="{Binding Cancelations}" IsReadOnly="True">
+                        <DataGridTextColumn.Header>
+                            <TextBlock Text="{Binding DataContext.ColumnHeaders[2],RelativeSource={RelativeSource AncestorType={x:Type DataGrid}}}" FontSize="12"/>
+                        </DataGridTextColumn.Header>
+                    </DataGridTextColumn>
+                    <DataGridTextColumn Width="auto" Binding="{Binding Reschedulings}" IsReadOnly="True">
+                        <DataGridTextColumn.Header>
+                            <TextBlock Text="{Binding DataContext.ColumnHeaders[3],RelativeSource={RelativeSource AncestorType={x:Type DataGrid}}}" FontSize="12"/>
+                        </DataGridTextColumn.Header>
+                    </DataGridTextColumn>
+                    <DataGridTextColumn Width="auto" Binding="{Binding Recommendations}" IsReadOnly="True">
+                        <DataGridTextColumn.Header>
+                            <TextBlock Text="{Binding DataContext.ColumnHeaders[4],RelativeSource={RelativeSource AncestorType={x:Type DataGrid}}}" FontSize="12"/>
+                        </DataGridTextColumn.Header>
+                    </DataGridTextColumn>
+                    <DataGridTextColumn Width="auto" Binding="{Binding Busyness}" IsReadOnly="True">
+                        <DataGridTextColumn.Header>
+                            <TextBlock Text="{Binding DataContext.ColumnHeaders[5],RelativeSource={RelativeSource AncestorType={x:Type DataGrid}}}" FontSize="12"/>
+                        </DataGridTextColumn.Header>
+                    </DataGridTextColumn>
+                </DataGrid.Columns>
+            </DataGrid>
+        </Grid>
+    </Grid>
+</Page>

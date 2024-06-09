@@ -1,0 +1,223 @@
+﻿<Page x:Class="BookingApp.View.OwnerView.AccommodationInfo"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:ns="clr-namespace:BookingApp.Applications.Utilities.Localization"
+      mc:Ignorable="d" 
+      d:DesignHeight="610" d:DesignWidth="700"
+      Title="AccommodationInfo">
+
+    <Grid>
+        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="6*"/>
+        </Grid.RowDefinitions>
+
+        <Rectangle Fill="#99000000" Margin="0,0,10,10" Grid.Row="1"/>
+        <!--Label,search, buttons area-->
+        
+        <Grid Grid.Row="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <Label Content="{ns:Loc Accommodation info}" 
+                   Grid.Column="0" 
+                   Foreground="{DynamicResource Text}" 
+                   VerticalAlignment="Bottom" 
+                   FontSize="22" 
+                   FontWeight="Bold"/>
+            
+            <StackPanel Orientation="Horizontal"
+                        HorizontalAlignment="Right"
+                        VerticalAlignment="Bottom" 
+                        Grid.Column="1" >
+                <Button Command="{Binding NavigateToPageCommand}"
+                        CommandParameter="Statistics"
+                        Background="{DynamicResource Buttons}" 
+                        Foreground="{DynamicResource Text}" 
+                        Margin="0,0,0,5" 
+                        Height="36" 
+                        Width="150"
+                        FontSize="19" 
+                        Content="{ns:Loc Statistics}"/>
+
+                <Button Command="{Binding NavigateToPageCommand}" 
+                        CommandParameter="Renovate"
+                        Background="{DynamicResource Buttons}" 
+                        Foreground="{DynamicResource Text}" 
+                        Margin="10,0,10,5" 
+                        Height="36" 
+                        Width="150"
+                        FontSize="19" 
+                        Content="{ns:Loc Renovate}"/>
+            </StackPanel>
+            
+        </Grid>
+
+        <Grid Grid.Row="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <Label Content="{Binding AccommodationDTO.Name}" 
+                   Margin="10,0,0,0" 
+                   HorizontalAlignment="Left"
+                   FontSize="20"
+                   Foreground="{DynamicResource Text}"
+                   FontWeight="Bold"/>
+
+            <Grid Grid.Row="1">
+                
+                <StackPanel >
+                    <StackPanel Orientation="Horizontal"
+                                Margin="10">
+                        <TextBlock Text="&#xf3c5;"
+                                   FontFamily="../../../Applications/Utilities/Themes/#Font Awesome 6 Free Solid"
+                                   Foreground="{DynamicResource Text}"
+                                   FontSize="16"
+                                   VerticalAlignment="Center"
+                                   Margin="10,0,5,0"/>
+                        <TextBlock Text="{ns:Loc Country:}"
+                                   Foreground="{DynamicResource Text}"
+                                   FontSize="16"
+                                   VerticalAlignment="Center"/>
+                        <TextBlock Text="{Binding AccommodationDTO.Location.Country}"
+                                   Foreground="{DynamicResource Text}"
+                                   FontSize="16"
+                                   VerticalAlignment="Center"/>
+                        <TextBlock Text="{ns:Loc City:}"
+                                   Foreground="{DynamicResource Text}"
+                                   FontSize="16"
+                                   Margin="10,0,0,0"
+                                   VerticalAlignment="Center"/>
+                        <TextBlock Text="{Binding AccommodationDTO.Location.City}"
+                                   Foreground="{DynamicResource Text}"
+                                   FontSize="16"
+                                   VerticalAlignment="Center"/>
+                    </StackPanel>
+
+                    <StackPanel Orientation="Horizontal"
+                                Margin="10">
+                        <TextBlock Text="&#xf015;"
+                                   FontFamily="../../../Applications/Utilities/Themes/#Font Awesome 6 Free Solid"
+                                   Foreground="{DynamicResource Text}"
+                                   FontSize="16"
+                                   VerticalAlignment="Center"
+                                   Margin="10,0,5,0"/>
+                        <TextBlock Text="{ns:Loc Type:}"
+                                   Foreground="{DynamicResource Text}"
+                                   FontSize="16"
+                                   VerticalAlignment="Center"/>
+                        <TextBlock Text="{Binding AccommodationDTO.Type}"
+                                   Foreground="{DynamicResource Text}"
+                                   FontSize="16"
+                                   VerticalAlignment="Center"/>
+                    </StackPanel>
+
+                    <StackPanel Orientation="Horizontal"
+                                Margin="10">
+                        <TextBlock Text="&#xe533;"
+                                   FontFamily="../../../Applications/Utilities/Themes/#Font Awesome 6 Free Solid"
+                                   Foreground="{DynamicResource Text}"
+                                   FontSize="16"
+                                   VerticalAlignment="Center"
+                                   Margin="10,0,5,0"/>
+                        <TextBlock Text="{ns:Loc Capacity:}"
+                                   Foreground="{DynamicResource Text}"
+                                   FontSize="16"
+                                   VerticalAlignment="Center"/>
+                        <TextBlock Text="{Binding AccommodationDTO.Capacity}"
+                                   Foreground="{DynamicResource Text}"
+                                   FontSize="16"
+                                   VerticalAlignment="Center"/>
+                    </StackPanel>
+
+                    <StackPanel Orientation="Horizontal"
+                                Margin="10">
+                        <TextBlock Text="&#xf073;"
+                                   FontFamily="../../../Applications/Utilities/Themes/#Font Awesome 6 Free Solid"
+                                   Foreground="{DynamicResource Text}"
+                                   FontSize="16"
+                                   VerticalAlignment="Center"
+                                   Margin="10,0,5,0"/>
+                        <TextBlock Text="{ns:Loc Minimum number of days:}"
+                                   Foreground="{DynamicResource Text}"
+                                   FontSize="16"
+                                   VerticalAlignment="Center"/>
+                        <TextBlock Text="{Binding AccommodationDTO.MinReservationDays}"
+                                   Foreground="{DynamicResource Text}"
+                                   FontSize="16"
+                                   VerticalAlignment="Center"/>
+                    </StackPanel>
+
+                    <StackPanel Orientation="Horizontal"
+                                Margin="10">
+                        <TextBlock Text="&#xf273;"
+                                   FontFamily="../../../Applications/Utilities/Themes/#Font Awesome 6 Free Solid"
+                                   Foreground="{DynamicResource Text}"
+                                   FontSize="16"
+                                   VerticalAlignment="Center"
+                                   Margin="10,0,5,0"/>
+                        <TextBlock Text="{ns:Loc Cancel days before reservation:}"
+                                   Foreground="{DynamicResource Text}"
+                                   FontSize="16"
+                                   VerticalAlignment="Center"/>
+                        <TextBlock Text="{Binding AccommodationDTO.CancelDaysPriorReservation}"
+                                   Foreground="{DynamicResource Text}"
+                                   FontSize="16"
+                                   VerticalAlignment="Center"/>
+                    </StackPanel>
+                    
+                    
+                </StackPanel>
+                
+            </Grid>
+            <Grid Grid.Row="2" Margin=" 30">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="7*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Button Grid.Column="0" 
+                        Background="Transparent" 
+                        Command="{Binding PreviousImageClick}" 
+                        BorderBrush="Transparent">
+                    <Image Source="../../../Resources/OwnerIcons/LArrow.png"/>
+                </Button>
+                <StackPanel Grid.Column="1"   
+                            Orientation="Horizontal" 
+                            HorizontalAlignment="Center"
+                              Height="220"
+                              Width="600">
+                    <ListBox ItemsSource="{Binding Images , Mode=OneWay}" 
+                              Background="Transparent" 
+                              BorderBrush="Transparent" 
+                              Height="220"
+                              Width="600"
+                              IsHitTestVisible="False">
+                        <ListBox.ItemsPanel>
+                            <ItemsPanelTemplate>
+                                <!-- Use a horizontal StackPanel or WrapPanel -->
+                                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center"/>
+                                <!-- or -->
+                                <!-- <WrapPanel Orientation="Horizontal" HorizontalAlignment="Center"/> -->
+                            </ItemsPanelTemplate>
+                        </ListBox.ItemsPanel>
+                    </ListBox>
+                </StackPanel>
+                <Button Grid.Column="2" 
+                        Background="Transparent" 
+                        Command="{Binding NextImageClick}"  
+                        BorderBrush="Transparent">
+                    <Image Source="../../../Resources/OwnerIcons/RArrow.png"/>
+                </Button>
+            </Grid>
+        </Grid>
+    </Grid>
+</Page>

@@ -1,0 +1,76 @@
+﻿<Page x:Class="BookingApp.WPF.View.GuestView.RescheduleReservation"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:BookingApp.WPF.View.GuestView"
+      mc:Ignorable="d" 
+      d:DesignHeight="750" d:DesignWidth="430"
+      Title="RescheduleReservation" Height="750" Width="430">
+
+    <Page.Resources>
+        <Style x:Key="LabelFontStyle" TargetType="Label">
+            <Setter Property="FontFamily" Value="Montserrat"/>
+            <Setter Property="FontSize" Value="20"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="Foreground" Value="DarkSlateGray"/>
+        </Style>
+        <Style x:Key="TextBlockFontStyle" TargetType="TextBlock">
+            <Setter Property="FontFamily" Value="Montserrat"/>
+            <Setter Property="FontSize" Value="11"/>
+            <Setter Property="HorizontalAlignment" Value="Center"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="Foreground" Value="Black"/>
+        </Style>
+        <Style x:Key="ButtonStyle" TargetType="Button">
+            <Setter Property="FontWeight" Value="DemiBold"/>
+            <Setter Property="FontFamily" Value="Montserrat"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="Background" Value="#8493d6"/>
+        </Style>
+    </Page.Resources>
+
+    <Grid>
+        <StackPanel Orientation="Vertical" Background="#F5FBFF" HorizontalAlignment="Center">
+            <Label Content="Reschedule Reservation" Style="{StaticResource LabelFontStyle}" RenderTransformOrigin="0.478,-1.701" HorizontalAlignment="Center"/>
+
+                <StackPanel Orientation="Vertical" HorizontalAlignment="Center" Margin="0,30,0,10">
+                    <TextBlock Text="{Binding SelectedReservation.AccommodationName}" FontWeight="SemiBold" Style="{StaticResource TextBlockFontStyle}" FontSize="15" Margin="0,-10,0,10">
+                        <TextBlock.TextDecorations>
+                            <TextDecorationCollection>
+                                <TextDecoration Location="Underline"/>
+                            </TextDecorationCollection>
+                        </TextBlock.TextDecorations>
+                    </TextBlock>
+                    <StackPanel Orientation="Horizontal" Margin="0,0,0,5">
+                        <TextBlock Text="Check In: " FontWeight="SemiBold" Style="{StaticResource TextBlockFontStyle}"/>
+                        <TextBlock Text="{Binding SelectedReservation.StartDate, StringFormat={}{0:dd.MM.yyyy}}" Style="{StaticResource TextBlockFontStyle}"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" Margin="0,0,0,15">
+                        <TextBlock Text="Check Out: " FontWeight="SemiBold" Style="{StaticResource TextBlockFontStyle}"/>
+                        <TextBlock Text="{Binding SelectedReservation.EndDate, StringFormat={}{0:dd.MM.yyyy}}" Style="{StaticResource TextBlockFontStyle}"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                        <Image Source="/Resources/GuestIcons/down-arrow.png" Height="30" Width="30" Margin="0,0,0,15"/>
+                        <Image Source="/Resources/GuestIcons/down-arrow.png" Height="30" Width="30" Margin="0,0,0,15"/>
+                        <Image Source="/Resources/GuestIcons/down-arrow.png" Height="30" Width="30" Margin="0,0,0,15"/>
+                        <Image Source="/Resources/GuestIcons/down-arrow.png" Height="30" Width="30" Margin="0,0,0,15"/>
+                        <Image Source="/Resources/GuestIcons/down-arrow.png" Height="30" Width="30" Margin="0,0,0,15"/>
+                        <Image Source="/Resources/GuestIcons/down-arrow.png" Height="30" Width="30" Margin="0,0,0,15"/>
+
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" Margin="0,0,0,5" HorizontalAlignment="Center">
+                        <TextBlock Text="New start date: " Style="{StaticResource TextBlockFontStyle}" FontWeight="SemiBold"/>
+                        <DatePicker x:Name="startDatePicker" SelectedDate="{Binding NewStartDate}" DisplayDateStart="{Binding SelectedReservation.StartDate}" Margin="0,0,10,0"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" Margin="0,0,0,5" HorizontalAlignment="Center">
+                        <TextBlock Text="New end date: " Style="{StaticResource TextBlockFontStyle}" FontWeight="SemiBold"/>
+                        <DatePicker x:Name="endDatePicker" SelectedDate="{Binding NewEndDate}" DisplayDateStart="{Binding SelectedReservation.EndDate}" Margin="0,0,10,0"/>
+                    </StackPanel>
+                </StackPanel>
+            <Button Name="sendRequestButton" Content="Send Request" Command="{Binding SendRequestCommand}" Height="25" Width="120" Margin="10" Visibility="Visible" Style="{StaticResource ButtonStyle}"/>
+            <Image Source="/Resources/GuestIcons/background.png"/>
+
+        </StackPanel>
+    </Grid>
+</Page>

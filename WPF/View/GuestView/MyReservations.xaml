@@ -1,0 +1,78 @@
+﻿<Page x:Class="BookingApp.View.MyReservations"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:BookingApp.View"
+      mc:Ignorable="d" 
+      Title="MyReservations" Height="750" Width="430">
+
+    <Page.Resources>
+        <Style x:Key="LabelFontStyle" TargetType="Label">
+            <Setter Property="FontFamily" Value="Montserrat"/>
+            <Setter Property="FontSize" Value="20"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="Foreground" Value="DarkSlateGray"/>
+        </Style>
+        <Style x:Key="TextBlockFontStyle" TargetType="TextBlock">
+            <Setter Property="FontFamily" Value="Montserrat"/>
+            <Setter Property="FontSize" Value="11"/>
+            <Setter Property="HorizontalAlignment" Value="Center"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="Foreground" Value="Black"/>
+        </Style>
+        <Style x:Key="ButtonStyle" TargetType="Button">
+            <Setter Property="FontWeight" Value="DemiBold"/>
+            <Setter Property="FontFamily" Value="Montserrat"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="Background" Value="#8493d6"/>
+        </Style>
+    </Page.Resources>
+
+    <Grid>
+        <StackPanel Background="#F5FBFF" Orientation="Vertical" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"  Height="Auto">
+            <Label Content="My Reservations" Style="{StaticResource LabelFontStyle}" RenderTransformOrigin="0.478,-1.701" HorizontalAlignment="Center"/>
+            <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Hidden" Background="#F5FBFF" Height="500"> 
+                <ListBox x:Name="presentableReservations" ItemsSource="{Binding Path=PresentableReservations, UpdateSourceTrigger=PropertyChanged}" SelectedItem="{Binding Path=SelectedReservation, Mode=TwoWay}" Width="Auto" Height="Auto" HorizontalAlignment="Center" VerticalAlignment="Stretch" Background="#F5FBFF" BorderThickness="0" ScrollViewer.VerticalScrollBarVisibility="Auto">
+                    <ListBox.ItemTemplate>
+                        <DataTemplate>
+                                <Border Background="White" BorderBrush="White" BorderThickness="1" CornerRadius="8" Height="Auto" Width="330" Margin="5">
+                                    <Border.Effect>
+                                        <DropShadowEffect BlurRadius="5" ShadowDepth="1" Color="#8493d6"/>
+                                    </Border.Effect>
+                                    <Grid Height="Auto" Width="Auto">
+                                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Stretch" VerticalAlignment="Center" Width="Auto" Height="Auto">
+                                            <Image Source="{Binding ImagePath}" Height="100" Width="100" VerticalAlignment="Center" Margin="15,0,0,0"/>
+                                            <StackPanel Grid.Column="1" Orientation="Vertical" Margin="10" HorizontalAlignment="Stretch" VerticalAlignment="Center">
+                                                <TextBlock Text="{Binding AccommodationName}" FontWeight="SemiBold" Style="{StaticResource TextBlockFontStyle}" FontSize="13" Margin="0,0,0,5">
+                                                    <TextBlock.TextDecorations>
+                                                        <TextDecorationCollection>
+                                                            <TextDecoration Location="Underline"/>
+                                                        </TextDecorationCollection>
+                                                    </TextBlock.TextDecorations>
+                                                </TextBlock>
+                                                <StackPanel Orientation="Horizontal">
+                                                    <Image Source="/Resources/GuestIcons/bullet.png" Height="5" Width="5" Margin="5,0,5,0"/>
+                                                    <TextBlock Text="Check In: " FontWeight="SemiBold" Style="{StaticResource TextBlockFontStyle}"/>
+                                                    <TextBlock Text="{Binding StartDate, StringFormat={}{0:dd.MM.yyyy}}" Style="{StaticResource TextBlockFontStyle}"/>
+                                                </StackPanel>
+                                                <StackPanel Orientation="Horizontal">
+                                                    <Image Source="/Resources/GuestIcons/bullet.png" Height="5" Width="5" Margin="5,0,5,0"/>
+                                                    <TextBlock Text="Check Out: " FontWeight="SemiBold" Style="{StaticResource TextBlockFontStyle}"/>
+                                                    <TextBlock Text="{Binding EndDate, StringFormat={}{0:dd.MM.yyyy}}" Style="{StaticResource TextBlockFontStyle}"/>
+                                                </StackPanel>
+                                                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Bottom">
+                                                <Button x:Name="CancelButton" Content="Cancel" Command="{Binding ElementName=presentableReservations, Path=DataContext.CancelReservationCommand}" CommandParameter="{Binding}" Width="Auto" Margin="5" Style="{StaticResource ButtonStyle}"/>
+                                                <Button Content="Reschedule" Width="Auto" Margin="5" Click="ReschedulePage_CLick" Style="{StaticResource ButtonStyle}"/>
+                                                </StackPanel>
+                                            </StackPanel>
+                                        </StackPanel>
+                                    </Grid>
+                                </Border>
+                        </DataTemplate>
+                    </ListBox.ItemTemplate>
+                </ListBox>
+            </ScrollViewer>
+        </StackPanel>
+    </Grid>
+</Page>

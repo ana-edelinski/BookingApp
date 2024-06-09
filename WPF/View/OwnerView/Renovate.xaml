@@ -1,0 +1,126 @@
+﻿<Page x:Class="BookingApp.View.OwnerView.Renovate"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:ns="clr-namespace:BookingApp.Applications.Utilities.Localization"
+      xmlns:local="clr-namespace:BookingApp.View.OwnerView"
+      mc:Ignorable="d" 
+      d:DesignHeight="610" d:DesignWidth="700"
+      Title="Renovate">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="6*"/>
+        </Grid.RowDefinitions>
+
+        <Rectangle Fill="#99000000" Margin="0,0,10,10" Grid.Row="1"/>
+        <!--Label,search, buttons area-->
+        <Grid Grid.Row="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <Label Content="{ns:Loc Renovate}" 
+                   Grid.Column="0" 
+                   Foreground="{DynamicResource Text}"
+                   VerticalAlignment="Bottom" 
+                   FontSize="22" 
+                   FontWeight="Bold"/>
+            <StackPanel Grid.Column="1"
+                        Orientation="Horizontal"
+                        HorizontalAlignment="Right">
+                
+                <Button Command="{Binding PreviousPageCommand}"
+                        Background="{DynamicResource Buttons}" 
+                        Foreground="{DynamicResource Text}" 
+                        Margin="0,0,10,5" 
+                        Height="36" 
+                        Width="150"
+                        HorizontalAlignment="Right"
+                        VerticalAlignment="Bottom" 
+                        FontSize="19" 
+                        Content="{ns:Loc Previous}"/>
+                
+                <Button Command="{Binding RenovateCommand}"
+                        Background="{DynamicResource Buttons}" 
+                        Foreground="{DynamicResource Text}" 
+                        Margin="0,0,10,5" 
+                        Height="36" 
+                        Width="150"
+                        HorizontalAlignment="Right"
+                        VerticalAlignment="Bottom" 
+                        FontSize="19" 
+                        Content="{ns:Loc Renovate}"/>
+            </StackPanel>
+            
+            
+        </Grid>
+        <Grid Grid.Row="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="4*"/>
+            </Grid.RowDefinitions>
+
+            <StackPanel Orientation="Horizontal"
+                        Grid.Row="0"
+                        VerticalAlignment="Center"
+                        HorizontalAlignment="Center">
+                
+                <TextBlock Text="{ns:Loc Start date:}" 
+                           Foreground="{DynamicResource Text}"
+                           FontSize="17"/>
+                <DatePicker Margin="5,0,20,0" 
+                            SelectedDate="{Binding StartDateDP}"/>
+                
+                <TextBlock Text="{ns:Loc End date:}" 
+                           Foreground="{DynamicResource Text}"
+                           FontSize="17"/>
+                <DatePicker Margin="5,0,20,0" 
+                            SelectedDate="{Binding EndDateDP}"/>
+                
+                <TextBlock Text="{ns:Loc Estimated length:}" 
+                           Foreground="{DynamicResource Text}"
+                           FontSize="17"/>
+                <TextBox Text="{Binding EstimatedLength}"
+                         Foreground="White"
+                         Background="DarkGray"
+                         FontSize="17"
+                         Width="60"
+                         Margin="5,0,0,0"/>
+            </StackPanel>
+
+            <Button Command="{Binding FindTermsClick}"
+                    Background="{DynamicResource Buttons}" 
+                    Foreground="{DynamicResource Text}"
+                    Height="36" 
+                    Width="150"
+                    Grid.Row="1"
+                    FontSize="19"
+                    IsEnabled="{Binding HasLength}"
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Center"
+                    Content="{ns:Loc Find terms}"/>
+            
+            <!--DataGrid for found available terms for renovation-->
+            <DataGrid Grid.Row="2"
+                      Background="{DynamicResource DataGridCell}"
+                      BorderBrush="Gray"
+                      Width="400"
+                      Height="300"
+                      AutoGenerateColumns="False"
+                      IsReadOnly="True"
+                      ItemsSource="{Binding FoundTerms}"
+                      SelectedItem="{Binding SelectedDateSpan}">
+                
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Start Date" Binding="{Binding Path=StartDate,StringFormat={}{0:dd.MM.yyyy}}" Width="*"/>
+                    <DataGridTextColumn Header="End Date" Binding="{Binding Path=EndDate,StringFormat={}{0:dd.MM.yyyy}}" Width="*"/>
+                </DataGrid.Columns>
+            </DataGrid>
+        </Grid>
+    </Grid>
+</Page>

@@ -1,0 +1,107 @@
+﻿<Page x:Class="BookingApp.View.AccommodationsAndReservations"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:BookingApp.View"
+        mc:Ignorable="d"
+        Title="AccommodationsAndReservations" Height="750" Width="420">
+
+    <Page.Resources>
+        <Style x:Key="LabelFontStyle" TargetType="Label">
+            <Setter Property="FontFamily" Value="Montserrat"/>
+            <Setter Property="FontSize" Value="20"/>
+            <Setter Property="Foreground" Value="DarkSlateGray"/>
+        </Style>
+        <Style x:Key="TextBlockFontStyle" TargetType="TextBlock">
+            <Setter Property="FontFamily" Value="Montserrat"/>
+            <Setter Property="FontSize" Value="12"/>
+            <Setter Property="HorizontalAlignment" Value="Center"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="Foreground" Value="Black"/>
+        </Style>
+    </Page.Resources>
+
+    <Grid>
+        <StackPanel Orientation="Vertical" Background="#F5FBFF" HorizontalAlignment="Stretch" Height="Auto">
+
+            <Grid Margin="0,20,0,0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+
+                <Frame x:Name="MainFrame" Grid.Row="0" />
+
+                <Label Content="Accommodations and Reservations" Style="{StaticResource LabelFontStyle}" FontWeight="Bold" RenderTransformOrigin="0.478,-1.701" HorizontalAlignment="Center" Grid.Row="1" Margin="0,0,0,20"/>
+
+                <Button Click="Discover_Click" Name="discoverButton" Background="Transparent" BorderThickness="0" Height="120" Width="360" Grid.Row="2">
+                    <Border Background="GhostWhite" BorderBrush="white" BorderThickness="1" CornerRadius="8" Height="100" Width="330" Grid.Row="2">
+                        <Border.Effect>
+                            <DropShadowEffect BlurRadius="5" ShadowDepth="1" Color="#8493d6"/>
+                        </Border.Effect>
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Stretch" VerticalAlignment="Center" Width="Auto" Height="Auto">
+                            <Image Source="/Resources/GuestIcons/discover-make-reservation.png" Height="45" Width="45" VerticalAlignment="Center" Margin="15,0,-15,0">
+                            </Image>
+                            <StackPanel Orientation="Vertical" HorizontalAlignment="Stretch" VerticalAlignment="Center" Width="Auto" Height="Auto">
+                                <TextBlock Text="Discover and Make Reservations" Style="{StaticResource TextBlockFontStyle}" FontWeight="DemiBold"/>
+                                <TextBlock Text="Find and Reserve Accommodation" Style="{StaticResource TextBlockFontStyle}" Margin="40,0"/>
+                            </StackPanel>
+                        </StackPanel>
+                    </Border>
+                </Button>
+
+
+                <Button Click="AnywhereAnyTime_Click" Name="anywhereAnytimeButton" Background="Transparent" BorderThickness="0" Height="120" Width="360" Grid.Row="3">
+                    <Border Background="GhostWhite" BorderBrush="white" BorderThickness="1" CornerRadius="8" Height="100" Width="330" Grid.Row="3">
+                        <Border.Effect>
+                            <DropShadowEffect BlurRadius="5" ShadowDepth="1" Color="#8493d6"/>
+                        </Border.Effect>
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Stretch" VerticalAlignment="Center" Width="Auto" Height="Auto">
+                            <Image Source="/Resources/GuestIcons/globe-earth.png" Height="45" Width="45" VerticalAlignment="Center" Margin="15,0,-15,0"/>
+                            <StackPanel Orientation="Vertical" HorizontalAlignment="Stretch" VerticalAlignment="Center" Width="Auto" Height="Auto" Margin="20,0,0,0" >
+                                <TextBlock Text="Anywhere Anytime" Style="{StaticResource TextBlockFontStyle}" FontWeight="DemiBold" Margin="40,0"/>
+                                <TextBlock Text="Find your perfect getaway" Style="{StaticResource TextBlockFontStyle}" Margin="40,0"/>
+                            </StackPanel>
+                        </StackPanel>
+                    </Border>
+                </Button>
+
+                <Button Click="MyReservations_Click" Name="myReservationsButton" Background="Transparent" BorderThickness="0" Height="120" Width="360" Grid.Row="4">
+                    <Border Background="GhostWhite" BorderBrush="white" BorderThickness="1" CornerRadius="8" Height="100" Width="330" Grid.Row="4">
+                        <Border.Effect>
+                            <DropShadowEffect BlurRadius="5" ShadowDepth="1" Color="#8493d6"/>
+                        </Border.Effect>
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Stretch" VerticalAlignment="Center" Width="Auto" Height="Auto">
+                            <Image Source="/Resources/GuestIcons/calendar.png" Height="45" Width="45" VerticalAlignment="Center" Margin="15,0,-15,0"/>
+                            <StackPanel Orientation="Vertical" HorizontalAlignment="Stretch" VerticalAlignment="Center" Width="Auto" Height="Auto" >
+                                <TextBlock Text="My Reservations" Style="{StaticResource TextBlockFontStyle}" FontWeight="DemiBold" Margin="40,0"/>
+                                <TextBlock Text="Review, change or cancel reservation" Style="{StaticResource TextBlockFontStyle}" Margin="40,0"/>
+                            </StackPanel>
+                        </StackPanel>
+                    </Border>
+                </Button>
+
+                <Button Click="RequestStatus_Click" Name="requestStatusButton" Background="Transparent" BorderThickness="0" Height="120" Width="360" Grid.Row="5">
+                    <Border Background="GhostWhite" BorderBrush="white" BorderThickness="1" CornerRadius="8" Height="100" Width="330" Grid.Row="5">
+                        <Border.Effect>
+                            <DropShadowEffect BlurRadius="5" ShadowDepth="1" Color="#8493d6"/>
+                        </Border.Effect>
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Stretch" VerticalAlignment="Center" Width="Auto" Height="Auto">
+                            <Image Source="/Resources/GuestIcons/rescheduling.png" Height="45" Width="45" VerticalAlignment="Center" Margin="15,0,-15,0"/>
+                            <StackPanel Orientation="Vertical" HorizontalAlignment="Stretch" VerticalAlignment="Center" Width="Auto" Height="Auto" >
+                                <TextBlock Text="Reschedule Reservation Status" Style="{StaticResource TextBlockFontStyle}" FontWeight="DemiBold" Margin="40,0"/>
+                                <TextBlock Text="See your request status and" Style="{StaticResource TextBlockFontStyle}" Margin="20,0" TextWrapping="Wrap"/>
+                                <TextBlock Text="download report" Style="{StaticResource TextBlockFontStyle}" Margin="20,0" TextWrapping="Wrap"/>
+                            </StackPanel>
+                        </StackPanel>
+                    </Border>
+                </Button>
+            </Grid>
+        </StackPanel>
+    </Grid>
+</Page>

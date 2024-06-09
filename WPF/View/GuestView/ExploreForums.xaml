@@ -1,0 +1,113 @@
+﻿<Page x:Class="BookingApp.WPF.View.GuestView.ExploreForums"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:BookingApp.WPF.View.GuestView"
+      mc:Ignorable="d" 
+      Height="750" Width="430"
+      Title="ExploreForums">
+
+    <Page.Resources>
+        <BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter"/>
+        <Style x:Key="LabelFontStyle" TargetType="Label">
+            <Setter Property="FontFamily" Value="Montserrat"/>
+            <Setter Property="FontSize" Value="20"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="Foreground" Value="DarkSlateGray"/>
+        </Style>
+        <Style x:Key="ComboBoxStyle" TargetType="ComboBox">
+            <Setter Property="FontFamily" Value="Montserrat"/>
+            <Setter Property="FontSize" Value="12"/>
+            <Setter Property="Foreground" Value="Black"/>
+        </Style>
+        <Style x:Key="ButtonStyle" TargetType="Button">
+            <Setter Property="FontWeight" Value="DemiBold"/>
+            <Setter Property="FontFamily" Value="Montserrat"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="Background" Value="#8493d6"/>
+        </Style>
+        <Style x:Key="TextBlockFontStyle" TargetType="TextBlock">
+            <Setter Property="FontFamily" Value="Montserrat"/>
+            <Setter Property="FontSize" Value="12"/>
+            <Setter Property="Foreground" Value="Black"/>
+        </Style>
+        <Style x:Key="UsefulForumStyle" TargetType="TextBlock">
+            <Style.Triggers>
+                <DataTrigger Binding="{Binding IsVeryUseful}" Value="True">
+                    <Setter Property="Text" Value="&#x2714;" />
+                </DataTrigger>
+            </Style.Triggers>
+        </Style>
+    </Page.Resources>
+
+    <Grid Background="#F5FBFF">
+        <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="20">
+            <Label Content="Explore Forums" Style="{StaticResource LabelFontStyle}" HorizontalAlignment="Center"/>
+
+            <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Hidden" Background="#F5FBFF" Height="500" Margin="0,20,0,0">
+                <ListBox x:Name="allForums" ItemsSource="{Binding AllForums, UpdateSourceTrigger=PropertyChanged}" SelectedItem="{Binding Path=SelectedForum, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" Width="Auto" Height="Auto" HorizontalAlignment="Center" Background="#F5FBFF" BorderThickness="0">
+                    <ListBox.ItemContainerStyle>
+                        <Style TargetType="ListBoxItem">
+                            <Setter Property="Opacity" Value="1"/>
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding IsOpened}" Value="False">
+                                    <Setter Property="Opacity" Value="0.5"/>
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </ListBox.ItemContainerStyle>
+                    <ListBox.ItemTemplate>
+                        <DataTemplate>
+                                <Border Background="White" BorderBrush="White" BorderThickness="1" CornerRadius="8" Height="100" Width="355">
+                                    <Border.Effect>
+                                        <DropShadowEffect BlurRadius="5" ShadowDepth="1" Color="#8493d6"/>
+                                    </Border.Effect>
+                                    <Grid HorizontalAlignment="Stretch" VerticalAlignment="Center" Height="Auto" Width="Auto">
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="Auto"/>
+                                            <ColumnDefinition Width="*"/>
+                                        </Grid.ColumnDefinitions>
+                                        <Image Source="/Resources/GuestIcons/location.png" Height="45" Width="45" VerticalAlignment="Center" Margin="10,0, 224,0" Grid.Column="0" Grid.ColumnSpan="2"/>
+                                        <StackPanel Grid.Column="1" Orientation="Vertical" HorizontalAlignment="Left" VerticalAlignment="Center" Width="Auto" Height="Auto" Margin="121,0,0,0">
+                                            <StackPanel Orientation="Horizontal">
+                                                <Image Source="/Resources/GuestIcons/bullet.png" Height="5" Width="5" Margin="5,0,5,0"/>
+                                                <TextBlock Text="City: " FontWeight="SemiBold" Style="{StaticResource TextBlockFontStyle}"/>
+                                                <TextBlock Text="{Binding City}" Style="{StaticResource TextBlockFontStyle}"/>
+                                            </StackPanel>
+                                            <StackPanel Orientation="Horizontal">
+                                                <Image Source="/Resources/GuestIcons/bullet.png" Height="5" Width="5" Margin="5,0,5,0"/>
+                                                <TextBlock Text="Country: " FontWeight="SemiBold" Style="{StaticResource TextBlockFontStyle}"/>
+                                                <TextBlock Text="{Binding Country}" Style="{StaticResource TextBlockFontStyle}"/>
+                                            </StackPanel>
+                                        <TextBlock Text="VERY USEFUL" Foreground="Green" FontWeight="Bold" Visibility="{Binding IsVeryUseful, Converter={StaticResource BooleanToVisibilityConverter}}" Margin="10,0,0,0"/>
+                                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Bottom">
+                                            <Button x:Name="CloseButton" Content="Close Forum" Command="{Binding ElementName=allForums, Path=DataContext.CloseForumCommand}" CommandParameter="{Binding}" Width="Auto" Margin="5" >
+                                                <Button.Style>
+                                                    <Style TargetType="Button">
+                                                        <Setter Property="FontWeight" Value="DemiBold"/>
+                                                        <Setter Property="FontFamily" Value="Montserrat"/>
+                                                        <Setter Property="Foreground" Value="White"/>
+                                                        <Setter Property="Background" Value="#8493d6"/>
+                                                        <Setter Property="IsEnabled" Value="True"/>
+                                                        <Style.Triggers>
+                                                            <DataTrigger Binding="{Binding IsOpened}" Value="False">
+                                                                <Setter Property="IsEnabled" Value="False"/>
+                                                            </DataTrigger>
+                                                        </Style.Triggers>
+                                                    </Style>
+                                                </Button.Style>
+                                            </Button>
+                                            <Button Content="View Comments" Command="{Binding ElementName=allForums, Path=DataContext.ViewCommentsCommand}" CommandParameter="{Binding}"  Width="Auto" Margin="5" Style="{StaticResource ButtonStyle}"/>
+                                        </StackPanel>
+                                    </StackPanel>
+                                    </Grid>
+                                </Border>
+                        </DataTemplate>
+                    </ListBox.ItemTemplate>
+                </ListBox>
+            </ScrollViewer>
+
+        </StackPanel>
+    </Grid>
+</Page>

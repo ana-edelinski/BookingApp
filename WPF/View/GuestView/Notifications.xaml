@@ -1,0 +1,47 @@
+﻿<Page x:Class="BookingApp.WPF.View.GuestView.Notifications"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:BookingApp.WPF.View.GuestView"
+      mc:Ignorable="d" 
+      Title="Notifications" Height="750" Width="430"
+      Loaded="Notifications_OnLoaded">
+
+    <Page.Resources>
+        <Style x:Key="LabelFontStyle" TargetType="Label">
+            <Setter Property="FontFamily" Value="Montserrat"/>
+            <Setter Property="FontSize" Value="20"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="Foreground" Value="DarkSlateGray"/>
+        </Style>
+        <Style x:Key="TextBlockFontStyle" TargetType="TextBlock">
+            <Setter Property="FontFamily" Value="Montserrat"/>
+            <Setter Property="FontSize" Value="11"/>
+            <Setter Property="HorizontalAlignment" Value="Center"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="Foreground" Value="Black"/>
+        </Style>
+    </Page.Resources>
+
+    <Grid>
+        <StackPanel Background="#F5FBFF" Orientation="Vertical" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Height="Auto">
+            <Label Content="Notifications" Style="{StaticResource LabelFontStyle}" RenderTransformOrigin="0.478,-1.701" HorizontalAlignment="Center" Margin="5"/>
+            <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Hidden" Height="Auto" BorderThickness="0" Background="#F5FBFF">
+                <ListBox x:Name="notifications" ItemsSource="{Binding Path=Notifications, UpdateSourceTrigger=PropertyChanged}" Width="Auto" Height="Auto" HorizontalAlignment="Center" Background="#F5FBFF" BorderThickness="0">
+                    <ListBox.ItemTemplate>
+                        <DataTemplate>
+                            <Border Background="GhostWhite" BorderBrush="White" BorderThickness="1" CornerRadius="8" Height="70" Width="330" Margin="3">
+                                <Border.Effect>
+                                    <DropShadowEffect BlurRadius="5" ShadowDepth="1" Color="#8493d6"/>
+                                </Border.Effect>
+                                <TextBlock Text="{Binding}" Margin="5" TextWrapping="Wrap" Style="{StaticResource TextBlockFontStyle}" FontWeight="Medium"/>
+                            </Border>
+                        </DataTemplate>
+                    </ListBox.ItemTemplate>
+                </ListBox>
+            </ScrollViewer>
+            <Image Source="/Resources/GuestIcons/background.png" HorizontalAlignment="Center" Height="229" Width="319" Margin="0,20,0,0"/>
+        </StackPanel>
+    </Grid>
+</Page>

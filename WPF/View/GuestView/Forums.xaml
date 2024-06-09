@@ -1,0 +1,83 @@
+﻿<Page x:Class="BookingApp.WPF.View.Forums"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+      xmlns:local="clr-namespace:BookingApp.WPF.View"
+      mc:Ignorable="d"
+      Title="Forums">
+
+    <Page.Resources>
+        <Style x:Key="LabelFontStyle" TargetType="Label">
+            <Setter Property="FontFamily" Value="Montserrat"/>
+            <Setter Property="FontSize" Value="20"/>
+            <Setter Property="Foreground" Value="DarkSlateGray"/>
+        </Style>
+        <Style x:Key="TextBlockFontStyle" TargetType="TextBlock">
+            <Setter Property="FontFamily" Value="Montserrat"/>
+            <Setter Property="FontSize" Value="12"/>
+            <Setter Property="HorizontalAlignment" Value="Center"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="Foreground" Value="Black"/>
+        </Style>
+    </Page.Resources>
+
+    <Grid>
+        <StackPanel Orientation="Vertical" Background="#F5FBFF" HorizontalAlignment="Stretch">
+
+            <Grid Margin="0,20,0,0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+
+                <Frame x:Name="MainFrame" Grid.Row="0"/>
+
+                <Label Content="Forums" Style="{StaticResource LabelFontStyle}" FontWeight="Bold" RenderTransformOrigin="0.478,-1.701" HorizontalAlignment="Center" Grid.Row="1" Margin="-10,0,0,20"/>
+
+                <Button Name="StartDiscussion" Command="{Binding StartDiscussionCommand}" Background="Transparent" BorderThickness="0" Height="120" Width="360" Grid.Row="2">
+                    <Border Background="GhostWhite" BorderBrush="white" BorderThickness="1" CornerRadius="8" Height="100" Width="330" Grid.Row="2">
+                        <Border.Effect>
+                            <DropShadowEffect BlurRadius="5" ShadowDepth="1" Color="#8493d6"/>
+                        </Border.Effect>
+                        <Grid HorizontalAlignment="Stretch" VerticalAlignment="Center" Width="Auto" Height="Auto">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <Image Source="/Resources/GuestIcons/open-forum.png" Height="45" Width="45" VerticalAlignment="Center" Margin="10,0, 224,0" Grid.Column="0" Grid.ColumnSpan="2"/>
+                            <StackPanel Orientation="Vertical" HorizontalAlignment="Left" VerticalAlignment="Center" Width="Auto" Height="Auto" Grid.Column="1" Margin="121,0,0,0">
+                                <TextBlock Text="Open Forum" Style="{StaticResource TextBlockFontStyle}" FontWeight="DemiBold"/>
+                                <TextBlock Text="Discuss locations" Style="{StaticResource TextBlockFontStyle}"/>
+                            </StackPanel>
+                        </Grid>
+                    </Border>
+                </Button>
+
+                <Button Name="myDiscussions" Command="{Binding MyDiscussionsCommand}" Background="Transparent" BorderThickness="0" Height="120" Width="360" Grid.Row="3">
+                    <Border Background="GhostWhite" BorderBrush="white" BorderThickness="1" CornerRadius="8" Height="100" Width="330" Grid.Row="3">
+                        <Border.Effect>
+                            <DropShadowEffect BlurRadius="5" ShadowDepth="1" Color="#8493d6"/>
+                        </Border.Effect>
+                        <Grid HorizontalAlignment="Stretch" VerticalAlignment="Center" Width="Auto" Height="Auto">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <Image Source="/Resources/GuestIcons/explore-forums.png" Height="45" Width="45" VerticalAlignment="Center" Margin="0,0,208,0" Grid.Column="1"/>
+                            <StackPanel Orientation="Vertical" HorizontalAlignment="Left" VerticalAlignment="Top" Width="Auto" Height="Auto" Grid.Column="1" Margin="126,6,0,0">
+                                <TextBlock Text="Explore Forums" Style="{StaticResource TextBlockFontStyle}" FontWeight="DemiBold"/>
+                                <TextBlock Text="Join any discussion you like" Style="{StaticResource TextBlockFontStyle}"/>
+                                <TextBlock Text="and close your forums" Style="{StaticResource TextBlockFontStyle}"/>
+                            </StackPanel>
+                        </Grid>
+                    </Border>
+                </Button>
+            </Grid>
+        </StackPanel>
+    </Grid>
+</Page>

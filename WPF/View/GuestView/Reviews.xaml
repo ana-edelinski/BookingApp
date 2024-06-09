@@ -1,0 +1,80 @@
+﻿<Page x:Class="BookingApp.View.Reviews"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:BookingApp.View"
+      mc:Ignorable="d" 
+      d:DesignHeight="750" d:DesignWidth="430"
+      Title="Reviews">
+
+    <Page.Resources>
+        <Style x:Key="LabelFontStyle" TargetType="Label">
+            <Setter Property="FontFamily" Value="Montserrat"/>
+            <Setter Property="FontSize" Value="20"/>
+            <Setter Property="Foreground" Value="DarkSlateGray"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+        </Style>
+        <Style x:Key="TextBlockFontStyle" TargetType="TextBlock">
+            <Setter Property="FontFamily" Value="Montserrat"/>
+            <Setter Property="FontSize" Value="12"/>
+            <Setter Property="HorizontalAlignment" Value="Center"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="Foreground" Value="Black"/>
+        </Style>
+    </Page.Resources>
+
+    <Grid >
+        <StackPanel Orientation="Vertical" Background="#F5FBFF" HorizontalAlignment="Stretch">
+
+            <Grid Margin="0,20,0,0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+
+                <Frame x:Name="MainFrame" Grid.Row="0"/>
+                <Label Content="Reviews" Style="{StaticResource LabelFontStyle}" RenderTransformOrigin="0.478,-1.701" HorizontalAlignment="Center" Grid.Row="1"/>
+
+
+                <Button Click="RateReccommend_Click" Name="rateReccommendButton" Background="Transparent" BorderThickness="0" Height="120" Width="360" Margin="10" Grid.Row="2">
+                    <Border Background="GhostWhite" BorderBrush="White" BorderThickness="1" CornerRadius="8" Height="100" Width="330" Grid.Row="2">
+                        <Border.Effect>
+                            <DropShadowEffect BlurRadius="5" ShadowDepth="1" Color="#8493d6"/>
+                        </Border.Effect>
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Stretch" VerticalAlignment="Center" Width="Auto" Height="Auto">
+                            <Image Source="/Resources/GuestIcons/pencil.png" Height="45" Width="45" VerticalAlignment="Center" Margin="15,0,0,0"/>
+                            <StackPanel Orientation="Vertical" HorizontalAlignment="Stretch" VerticalAlignment="Center" Width="Auto" Height="Auto">
+                                <TextBlock Text="Rate and Reccommendations" Style="{StaticResource TextBlockFontStyle}" FontWeight="DemiBold" Margin="40,0"/>
+                                <TextBlock Text="Rate and share your thoughts" Style="{StaticResource TextBlockFontStyle}" Margin="40,0"/>
+                            </StackPanel>
+                        </StackPanel>
+                    </Border>
+                </Button>
+
+                <Button Click="MyReviews_Click" Name="myReviewsButton" Background="Transparent" BorderThickness="0" Height="120" Width="360" Margin="10" Grid.Row="3">
+                    <Border Background="GhostWhite" BorderBrush="White" BorderThickness="1" Height="110" Width="330" Grid.Row="3" CornerRadius="8">
+                        <Border.Effect>
+                            <DropShadowEffect BlurRadius="5" ShadowDepth="1" Color="#8493d6"/>
+                        </Border.Effect>
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Stretch" VerticalAlignment="Center" Width="Auto" Height="Auto">
+                            <Image Source="/Resources/GuestIcons/medal.png" Height="45" Width="45" VerticalAlignment="Center" Margin="15,0,0,0"/>
+                            <StackPanel Orientation="Vertical" HorizontalAlignment="Stretch" VerticalAlignment="Center" Width="Auto" Height="Auto" >
+                                <TextBlock Text="My Reviews" Style="{StaticResource TextBlockFontStyle}" FontWeight="DemiBold" Margin="40,0"/>
+                                <TextBlock Text="See what others think of you" Style="{StaticResource TextBlockFontStyle}" Margin="40,0"/>
+                            </StackPanel>
+                        </StackPanel>
+                    </Border>
+                </Button>
+
+
+            </Grid>
+
+        </StackPanel>
+
+
+
+    </Grid>
+</Page>

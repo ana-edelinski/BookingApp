@@ -1,0 +1,55 @@
+﻿<Page x:Class="BookingApp.WPF.View.GuestView.MyAccount"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:BookingApp.WPF.View.GuestView"
+      mc:Ignorable="d" 
+      Title="MyAccount" Height="750" Width="430"
+      Loaded="MyAccount_OnLoaded">
+
+    <Page.Resources>
+        <Style x:Key="LabelFontStyle" TargetType="Label">
+            <Setter Property="FontFamily" Value="Montserrat"/>
+            <Setter Property="FontSize" Value="20"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="Foreground" Value="DarkSlateGray"/>
+        </Style>
+        <Style x:Key="TextBlockFontStyle" TargetType="TextBlock">
+            <Setter Property="FontFamily" Value="Montserrat"/>
+            <Setter Property="FontSize" Value="11"/>
+            <Setter Property="HorizontalAlignment" Value="Center"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="Foreground" Value="Black"/>
+        </Style>
+    </Page.Resources>
+
+    <Grid>
+        <StackPanel Orientation="Vertical" Background="#F5FBFF" HorizontalAlignment="Center">
+            <Label Content="My Account" Style="{StaticResource LabelFontStyle}" RenderTransformOrigin="0.478,-1.701" HorizontalAlignment="Center"/>
+            <Image Source="/Resources/GuestIcons/user.png" Height="60" Width="60" Margin="0,20,0,0"/>
+            <TextBlock Text="User Info:" Style="{StaticResource TextBlockFontStyle}" FontWeight="DemiBold" Margin="0,20,0,0"/>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                <TextBlock Text="Username: " Style="{StaticResource TextBlockFontStyle}"/>
+                <TextBlock Text="{Binding GuestDTO.Username}" Style="{StaticResource TextBlockFontStyle}"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                <TextBlock Text="User type: " Style="{StaticResource TextBlockFontStyle}"/>
+                <TextBlock Text="{Binding GuestDTO.UserType}" Style="{StaticResource TextBlockFontStyle}" Visibility="{Binding RegularUserText, UpdateSourceTrigger=PropertyChanged}"/>
+                <TextBlock Text="{Binding GuestDTO.UserType}" Style="{StaticResource TextBlockFontStyle}" Visibility="{Binding SuperGuestText, UpdateSourceTrigger=PropertyChanged}"/>
+            </StackPanel>
+
+            <TextBlock Text="Super guest:" Style="{StaticResource TextBlockFontStyle}" FontWeight="DemiBold" Margin="0,20,0,0" Visibility="{Binding IsSuperGuestVisible, UpdateSourceTrigger=PropertyChanged}"/>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                <TextBlock Text="Title ends: " Style="{StaticResource TextBlockFontStyle}" Visibility="{Binding IsSuperGuestVisible, UpdateSourceTrigger=PropertyChanged}"/>
+                <TextBlock Text="{Binding GuestDTO.SuperGuestExpirationDate, StringFormat={}{0:dd.MM.yyyy}}" Style="{StaticResource TextBlockFontStyle}" Visibility="{Binding IsSuperGuestVisible, UpdateSourceTrigger=PropertyChanged}"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                <TextBlock Text="Points left: " Style="{StaticResource TextBlockFontStyle}" Visibility="{Binding IsSuperGuestVisible, UpdateSourceTrigger=PropertyChanged}"/>
+                <TextBlock Text="{Binding GuestDTO.BonusPoints}" Style="{StaticResource TextBlockFontStyle}" Visibility="{Binding IsSuperGuestVisible, UpdateSourceTrigger=PropertyChanged}"/>
+            </StackPanel>
+            <Image Source="/Resources/GuestIcons/background.png" HorizontalAlignment="Center" Height="229" Width="319" Margin="0,20,0,0"/>
+
+        </StackPanel>
+    </Grid>
+</Page>

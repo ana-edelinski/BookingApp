@@ -1,0 +1,60 @@
+﻿<Page x:Class="BookingApp.WPF.View.GuestView.StartDiscussion"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:BookingApp.WPF.View.GuestView"
+      mc:Ignorable="d" 
+      Title="StartDiscussion" Height="750" Width="430">
+
+    <Page.Resources>
+        <ControlTemplate x:Key="ValidationTemplate">
+            <StackPanel>
+                <AdornedElementPlaceholder x:Name="textBox" />
+                <TextBlock Text="{Binding [0].ErrorContent}" Foreground="Red" />
+            </StackPanel>
+        </ControlTemplate>
+        
+        <Style x:Key="LabelFontStyle" TargetType="Label">
+            <Setter Property="FontFamily" Value="Montserrat"/>
+            <Setter Property="FontSize" Value="20"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="Foreground" Value="DarkSlateGray"/>
+        </Style>
+        <Style x:Key="ComboBoxStyle" TargetType="ComboBox">
+            <Setter Property="FontFamily" Value="Montserrat"/>
+            <Setter Property="FontSize" Value="12"/>
+            <Setter Property="Foreground" Value="Black"/>
+        </Style>
+        <Style x:Key="ButtonStyle" TargetType="Button">
+            <Setter Property="FontWeight" Value="DemiBold"/>
+            <Setter Property="FontFamily" Value="Montserrat"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="Background" Value="#8493d6"/>
+        </Style>
+        <Style x:Key="TextBlockFontStyle" TargetType="TextBlock">
+            <Setter Property="FontFamily" Value="Montserrat"/>
+            <Setter Property="FontSize" Value="12"/>
+            <Setter Property="Foreground" Value="Black"/>
+        </Style>
+    </Page.Resources>
+
+    <Grid Background="#F5FBFF">
+        <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="20">
+            <Label Content="Start a Discussion" Style="{StaticResource LabelFontStyle}" HorizontalAlignment="Center"/>
+
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,20,0,0">
+                <ComboBox x:Name="CountryComboBox" ItemsSource="{Binding Countries}" SelectedItem="{Binding SelectedCountry, Mode=TwoWay, ValidatesOnDataErrors=True}" Width="150" Margin="0,0,10,0" Style="{StaticResource ComboBoxStyle}" IsEditable="True" IsTextSearchEnabled="True" VerticalContentAlignment="Center" IsDropDownOpen="{Binding IsCountryComboBoxOpen}" Validation.ErrorTemplate="{StaticResource ValidationTemplate}"/>
+                <ComboBox x:Name="CityComboBox" ItemsSource="{Binding Cities}" SelectedItem="{Binding SelectedCity, Mode=TwoWay, ValidatesOnDataErrors=True}" Width="150" Style="{StaticResource ComboBoxStyle}"  IsEditable="True" IsTextSearchEnabled="True" VerticalContentAlignment="Center" IsDropDownOpen="{Binding IsCityComboBoxOpen}" Validation.ErrorTemplate="{StaticResource ValidationTemplate}"/>
+            </StackPanel>
+
+            <StackPanel Orientation="Vertical" HorizontalAlignment="Center" Margin="5">
+
+                <Label Content="Enter First Comment:" Style="{StaticResource LabelFontStyle}" FontWeight="SemiBold" FontSize="11" Foreground="Black" Margin="0,10,0,0"/>
+                <TextBox x:Name="commentTextBox" Text="{Binding Path=FirstCommentDTO.Text, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}" Width="250" Height="150" Validation.ErrorTemplate="{StaticResource ValidationTemplate}"/>
+            </StackPanel>
+            <Button x:Name="openForum" Command="{Binding CreateForumCommand}" Content="Open Forum" Width="90" Style="{StaticResource ButtonStyle}" Margin="5"/>
+            <Image Source="/Resources/GuestIcons/background.png" HorizontalAlignment="Center" Height="229" Width="319" Margin="0,20,0,0"/>
+        </StackPanel>
+    </Grid>
+</Page>

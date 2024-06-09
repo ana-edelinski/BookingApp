@@ -1,0 +1,237 @@
+﻿<Window x:Class="BookingApp.View.OwnerView.OwnerOverview"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+      xmlns:ns="clr-namespace:BookingApp.Applications.Utilities.Localization"
+        mc:Ignorable="d"
+        WindowStartupLocation="CenterScreen"
+        ResizeMode="NoResize"  Height="768" Width="1024"
+        Icon="/Resources/favicon.ico">
+
+    
+    <Grid>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="3.2*" x:Name="Header"/>
+            <RowDefinition Height="20*" x:Name="Body"/>
+            <RowDefinition Height="1.5*" x:Name="Footer"/>
+        </Grid.RowDefinitions>
+
+        <!-- Header -->
+        <Grid Grid.Row="0" Background="{DynamicResource HeaderFooter}">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="3*"/>
+                <ColumnDefinition Width="8*"/>
+                <ColumnDefinition Width="3*"/>
+            </Grid.ColumnDefinitions>
+
+            <!-- BookingApp name -->
+            <Grid Grid.Column="0">
+                <Label Content="&#xf594;" FontFamily="../../../Applications/Utilities/Themes/#Font Awesome 6 Free Solid" FontSize="50" Foreground="{DynamicResource Text}" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="10"/>
+                <Label Content="BookingApp" Foreground="{DynamicResource Text}" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="60,0,0,0" FontSize="20"/>
+            </Grid>
+
+            <!-- Icon buttons -->
+            <Grid Grid.Column="1">
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+                    <Button Name="RateGuestsButton" Command="{Binding NavigateToPageCommand}" CommandParameter="UnratedGuests" Background="Transparent" BorderBrush="Transparent" Height="auto"  Width="auto" Margin="5">
+                        <StackPanel>
+                            <Label Content="&#xf4fc;" FontFamily="../../../Applications/Utilities/Themes/#Font Awesome 6 Free Solid" Foreground="{DynamicResource Text}" FontSize="50" HorizontalAlignment="Center"/>
+                            <Label Content="{ns:Loc Unrated Guests}" HorizontalAlignment="Center" Foreground="{DynamicResource Text}"/>
+                        </StackPanel>
+                    </Button>
+
+                    <Button Command="{Binding NavigateToPageCommand}" CommandParameter="Reviews" Background="Transparent" BorderBrush="Transparent" Height="auto"  Width="auto" Margin="5">
+                        <StackPanel>
+                            <Label Content="&#xf46d;" FontFamily="../../../Applications/Utilities/Themes/#Font Awesome 6 Free Solid" Foreground="{DynamicResource Text}" FontSize="50" HorizontalAlignment="Center"/>
+                            <Label Content="{ns:Loc Reviews}" HorizontalAlignment="Center" Foreground="{DynamicResource Text}"/>
+                        </StackPanel>
+
+                    </Button>
+
+                    <Button Command="{Binding NavigateToPageCommand}" CommandParameter="AllRenovations" Background="Transparent" BorderBrush="Transparent" Height="auto"  Width="auto" Margin="5">
+                        <StackPanel>
+                            <Label Content="&#xf6e3;" FontFamily="../../../Applications/Utilities/Themes/#Font Awesome 6 Free Solid" Foreground="{DynamicResource Text}" FontSize="50" HorizontalAlignment="Center"/>
+                            <Label Content="{ns:Loc Renovations}" HorizontalAlignment="Center" Foreground="{DynamicResource Text}"/>
+                        </StackPanel>
+
+                    </Button >
+
+                    <Button Command="{Binding NavigateToPageCommand}" CommandParameter="Forums" Background="Transparent" BorderBrush="Transparent" Height="auto"  Width="auto" Margin="5">
+                        <StackPanel>
+                            <Label Content="&#xf086;" FontFamily="../../../Applications/Utilities/Themes/#Font Awesome 6 Free Solid" Foreground="{DynamicResource Text}" FontSize="50" HorizontalAlignment="Center"/>
+                            <Label Content="{ns:Loc Forums}" HorizontalAlignment="Center" Foreground="{DynamicResource Text}"/>
+                        </StackPanel>
+
+                    </Button>
+
+                    <Button  Command="{Binding NavigateToPageCommand}" CommandParameter="MoveRequests" Background="Transparent" BorderBrush="Transparent" Height="auto"  Width="auto" Margin="5">
+                        <StackPanel>
+                            <Label Content="&#xf273;" FontFamily="../../../Applications/Utilities/Themes/#Font Awesome 6 Free Solid" Foreground="{DynamicResource Text}" FontSize="50" HorizontalAlignment="Center"/>
+                            <Label Content="{ns:Loc Move Requests}" HorizontalAlignment="Center" Foreground="{DynamicResource Text}"/>
+                        </StackPanel>
+
+                    </Button>
+
+                    <Button  Command="{Binding NavigateToPageCommand}" CommandParameter="AllReservations" Background="Transparent" BorderBrush="Transparent" Height="auto"  Width="auto" Margin="5">
+                        <StackPanel>
+                            <Label Content="&#xf073;" FontFamily="../../../Applications/Utilities/Themes/#Font Awesome 6 Free Solid" Foreground="{DynamicResource Text}" FontSize="50" HorizontalAlignment="Center"/>
+                            <Label Content="{ns:Loc Reservations}" HorizontalAlignment="Center" Foreground="{DynamicResource Text}"/>
+                        </StackPanel>
+
+                    </Button>
+                </StackPanel>
+
+            </Grid>
+
+            <!-- Username, profile picture area -->
+            <Grid Grid.Column="2">
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="0,0,10,0">
+                    <Label Content="{Binding User.Username}" Foreground="{DynamicResource Text}" FontSize="20" VerticalAlignment="Center"/>
+
+                    <Button x:Name="OpenProfileMenu" Background="Transparent" BorderBrush="Transparent" Click="OpenProfileMenu_Click">
+                        <Label Content="&#xf2bd;" FontFamily="../../../Applications/Utilities/Themes/#Font Awesome 6 Free Solid" Foreground="{DynamicResource Text}" FontSize="50"/>
+
+                        <Button.ContextMenu>
+                            <ContextMenu Name="ProfileMenu">
+                                <ContextMenu.Resources>
+                                    <Style TargetType="MenuItem">
+                                        <Setter Property="Background" Value="{DynamicResource Body}"/>
+                                        <Setter Property="Foreground" Value="{DynamicResource Text}"/>
+                                    </Style>
+                                </ContextMenu.Resources>
+                                <MenuItem Header="Account info"  
+                                          Click="AccountInfo_Click"/>
+                                <MenuItem Header="Settings"  
+                                          Click="Settings_Click"/>
+                                <MenuItem Header="Log out"  
+                                          Click="LogOut_Click"/>
+                            </ContextMenu>
+                        </Button.ContextMenu>
+                    </Button>
+
+
+                </StackPanel>
+
+            </Grid>
+        </Grid>
+
+        <!-- Data, notifications area -->
+        <Grid Grid.Row="1" Background="{DynamicResource Body}">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="0.9*"/>
+                <ColumnDefinition Width="9*"/>
+                <ColumnDefinition Width="3.3*"/>
+            </Grid.ColumnDefinitions>
+
+            <!--Back Button-->
+            <Grid>
+                <Button Command="{Binding NavigateToPageCommand}" 
+                        CommandParameter="Accommodations"
+                        Background="Transparent" 
+                        BorderBrush="Transparent" 
+                        Height="45" Width="45" 
+                        HorizontalAlignment="Center" 
+                        VerticalAlignment="Top" 
+                        Margin="0,15,0,0">
+                    <Label Content="&#xf137;" 
+                           FontFamily="../../../Applications/Utilities/Themes/#Font Awesome 6 Free Solid" 
+                           Foreground="{DynamicResource Text}" 
+                           FontSize="30" 
+                           HorizontalAlignment="Center"/>
+
+                </Button>
+            </Grid>
+
+            <!--Data...-->
+            <Grid Grid.Column="1">
+                <Frame 
+                    x:Name="OwnerOverviewFrame"
+                    Grid.Row="1"
+                    NavigationUIVisibility="Hidden">
+                </Frame>
+            </Grid>
+
+            <!--Notification area-->
+            <Grid Grid.Column="2">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="6*"/>
+                </Grid.RowDefinitions>
+                <Label Grid.Row="1" Content="{ns:Loc Notifications}" Background="{DynamicResource Buttons}" Foreground="{DynamicResource Text}" Height="auto" Width="236" VerticalAlignment="Top" HorizontalContentAlignment="Center" FontSize="25" HorizontalAlignment="Center" Margin="10,0,10,0" />
+                <DataGrid x:Name="NotificationDataGrid"
+                          Grid.Row="1"
+                          ItemsSource="{Binding Notifications, UpdateSourceTrigger=PropertyChanged}"
+                          Margin="10,60,10,10" 
+                          Background="#99000100"
+                          BorderBrush="Transparent"
+                          HeadersVisibility="None" 
+                          HorizontalAlignment="Center" 
+                          Width="236" 
+                          IsReadOnly="True"
+                          Height="auto"
+                          AutoGenerateColumns="False">
+                    <DataGrid.Resources>
+                        <SolidColorBrush x:Key="{x:Static SystemColors.HighlightBrushKey}" Color="Transparent"/>
+                        <SolidColorBrush x:Key="{x:Static SystemColors.HighlightTextBrushKey}" Color="Black"/>
+                        <SolidColorBrush x:Key="{x:Static SystemColors.ControlBrushKey}" Color="Transparent"/>
+                        <!--DataGridCell style-->
+                        <Style TargetType="DataGridCell">
+                            <Setter Property="BorderThickness" Value="0"/>
+                            <Setter Property="Template">
+                                <Setter.Value>
+                                    <ControlTemplate TargetType="{x:Type DataGridCell}">
+                                        <Border BorderThickness="1" BorderBrush="Beige" CornerRadius="8" Background="{DynamicResource DataGridCell}">
+                                            <ContentPresenter/>
+                                        </Border>
+                                    </ControlTemplate>
+                                </Setter.Value>
+                            </Setter>
+                        </Style>
+
+                        <!--DateGridRow style-->
+                        <Style TargetType="DataGridRow">
+                            <Setter Property="Margin" Value="5"/>
+                            <Setter Property="BorderBrush" Value="Transparent"/>
+                            <Setter Property="Background" Value="Transparent"/>
+                            <Setter Property="HorizontalAlignment" Value="Center"/>
+                            <Setter Property="Height" Value="auto"/>
+                        </Style>
+
+                        <!--ScrollBar style-->
+                        <Style TargetType="ScrollViewer">
+                            <Setter Property="HorizontalScrollBarVisibility" Value="Hidden"/>
+                            <Setter Property="VerticalScrollBarVisibility" Value="Hidden"/>
+                            <Setter Property="ScrollViewer.CanContentScroll" Value="False"/>
+                        </Style>
+
+
+                    </DataGrid.Resources>
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Width="215" FontSize="17" Binding="{Binding}">
+                            <DataGridTextColumn.ElementStyle>
+                                <Style TargetType="{x:Type TextBlock}">
+                                    <Setter Property="HorizontalAlignment" Value="Center"/>
+                                    <Setter Property="VerticalAlignment" Value="Center"/>
+                                    <Setter Property="TextWrapping" Value="Wrap"/>
+                                </Style>
+                            </DataGridTextColumn.ElementStyle>
+                            <DataGridTextColumn.EditingElementStyle>
+                                <Style TargetType="{x:Type TextBox}">
+                                    <Setter Property="TextWrapping" Value="Wrap"/>
+                                </Style>
+                            </DataGridTextColumn.EditingElementStyle>
+                        </DataGridTextColumn>
+
+                    </DataGrid.Columns>
+                </DataGrid>
+            </Grid>
+        </Grid>
+
+        <!-- Footer -->
+        <Grid Grid.Row="2" Background="{DynamicResource HeaderFooter}">
+            <Label Content="{ns:Loc Travel the World}" HorizontalAlignment="Center" Foreground="{DynamicResource Text}" VerticalAlignment="Center" FontSize="18"/>
+        </Grid>
+    </Grid>
+</Window>

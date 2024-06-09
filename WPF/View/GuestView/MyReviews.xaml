@@ -1,0 +1,93 @@
+﻿<Page x:Class="BookingApp.WPF.View.GuestView.MyReviews"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:BookingApp.WPF.View.GuestView"
+      mc:Ignorable="d" 
+      d:DesignHeight="750" d:DesignWidth="430"
+      Title="MyReviews" Height="750" Width="430">
+
+    <Page.Resources>
+        <Style x:Key="LabelFontStyle" TargetType="Label">
+            <Setter Property="FontFamily" Value="Montserrat"/>
+            <Setter Property="FontSize" Value="20"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="Foreground" Value="DarkSlateGray"/>
+        </Style>
+        <Style x:Key="TextBlockFontStyle" TargetType="TextBlock">
+            <Setter Property="FontFamily" Value="Montserrat"/>
+            <Setter Property="FontSize" Value="11"/>
+            <Setter Property="HorizontalAlignment" Value="Center"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="Foreground" Value="Black"/>
+        </Style>
+        <DataTemplate x:Key="StarTemplate">
+            <TextBlock Text="⭐" FontSize="16" Foreground="Gold" />
+        </DataTemplate>
+    </Page.Resources>
+
+    <Grid>
+        <StackPanel Background="#F5FBFF" Orientation="Vertical" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Height="Auto">
+            <Label Content="My Reviews" Style="{StaticResource LabelFontStyle}" RenderTransformOrigin="0.478,-1.701" HorizontalAlignment="Center"/>
+            <TextBlock Text="No reviews available" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="Montserrat" FontSize="11" Margin="20">
+                <TextBlock.Style>
+                    <Style TargetType="TextBlock">
+                        <Setter Property="Visibility" Value="Collapsed" />
+                        <Style.Triggers>
+                            <DataTrigger Binding="{Binding Path=GuestRatings.Count}" Value="0">
+                                <Setter Property="Visibility" Value="Visible" />
+                            </DataTrigger>
+                        </Style.Triggers>
+                    </Style>
+                </TextBlock.Style>
+            </TextBlock>
+            <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Hidden" Background="#F5FBFF" Height="Auto">
+                <ListBox x:Name="presentableReviews" ItemsSource="{Binding Path=GuestRatings, UpdateSourceTrigger=PropertyChanged}" Width="Auto" Height="Auto" HorizontalAlignment="Center" VerticalAlignment="Stretch" Background="#F5FBFF" BorderThickness="0" ScrollViewer.VerticalScrollBarVisibility="Auto">
+                    <ListBox.ItemTemplate>
+                        <DataTemplate>
+                            <Border Background="White" BorderBrush="White" BorderThickness="1" CornerRadius="8" Height="Auto" Width="330" VerticalAlignment="Stretch">
+                                <Border.Effect>
+                                    <DropShadowEffect BlurRadius="5" ShadowDepth="1" Color="#8493d6"/>
+                                </Border.Effect>
+                                <Grid Height="Auto" Width="Auto">
+                                    <StackPanel Grid.Column="1" Orientation="Vertical" Margin="10" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                                        <StackPanel Orientation="Horizontal">
+                                            <TextBlock Text="Owner: " FontWeight="SemiBold" Style="{StaticResource TextBlockFontStyle}"/>
+                                            <TextBlock Text="{Binding OwnerName}" Style="{StaticResource TextBlockFontStyle}"/>
+                                        </StackPanel>
+                                        <StackPanel Orientation="Horizontal">
+                                            <TextBlock Text="Cleanliness: " FontWeight="SemiBold" Style="{StaticResource TextBlockFontStyle}"/>
+                                            <ItemsControl ItemsSource="{Binding CleanlinessStars}" ItemTemplate="{StaticResource StarTemplate}">
+                                                <ItemsControl.ItemsPanel>
+                                                    <ItemsPanelTemplate>
+                                                        <StackPanel Orientation="Horizontal" />
+                                                    </ItemsPanelTemplate>
+                                                </ItemsControl.ItemsPanel>
+                                            </ItemsControl>
+                                        </StackPanel>
+                                        <StackPanel Orientation="Horizontal">
+                                            <TextBlock Text="Rule respect: " FontWeight="SemiBold" Style="{StaticResource TextBlockFontStyle}"/>
+                                            <ItemsControl ItemsSource="{Binding RuleRespectStars}" ItemTemplate="{StaticResource StarTemplate}">
+                                                <ItemsControl.ItemsPanel>
+                                                    <ItemsPanelTemplate>
+                                                        <StackPanel Orientation="Horizontal" />
+                                                    </ItemsPanelTemplate>
+                                                </ItemsControl.ItemsPanel>
+                                            </ItemsControl>
+                                        </StackPanel>
+                                        <StackPanel Orientation="Horizontal" VerticalAlignment="Stretch">
+                                            <TextBlock Text="Comment: " FontWeight="SemiBold" Style="{StaticResource TextBlockFontStyle}" VerticalAlignment="Top"/>
+                                            <TextBlock Text="{Binding CommentText}" Style="{StaticResource TextBlockFontStyle}" TextWrapping="Wrap" Width="250" VerticalAlignment="Stretch"/>
+                                        </StackPanel>
+                                    </StackPanel>
+                                </Grid>
+                            </Border>
+                        </DataTemplate>
+                    </ListBox.ItemTemplate>
+                </ListBox>
+            </ScrollViewer>
+            <Image Source="/Resources/GuestIcons/background.png" HorizontalAlignment="Center" Height="229" Width="319" Margin="0,20,0,0"/>
+        </StackPanel>
+    </Grid>
+</Page>

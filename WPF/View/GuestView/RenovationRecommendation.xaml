@@ -1,0 +1,82 @@
+﻿<Page x:Class="BookingApp.WPF.View.GuestView.RenovationRecommendation"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:BookingApp.WPF.View.GuestView"
+      mc:Ignorable="d" 
+      d:DesignHeight="750" d:DesignWidth="430"
+      Title="RenovationRecommendation" Height="750" Width="430">
+    <Page.Resources>
+
+        <ControlTemplate x:Key="ValidationTemplate">
+            <StackPanel>
+                <AdornedElementPlaceholder x:Name="textBox" />
+                <TextBlock Text="{Binding [0].ErrorContent}" Foreground="Red" />
+            </StackPanel>
+        </ControlTemplate>
+
+        <Style x:Key="LabelFontStyle" TargetType="Label">
+            <Setter Property="FontFamily" Value="Montserrat"/>
+            <Setter Property="FontSize" Value="20"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="Foreground" Value="DarkSlateGray"/>
+        </Style>
+        <Style x:Key="TextBlockFontStyle" TargetType="TextBlock">
+            <Setter Property="FontFamily" Value="Montserrat"/>
+            <Setter Property="FontSize" Value="11"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="HorizontalAlignment" Value="Stretch"/>
+            <Setter Property="Foreground" Value="Black"/>
+            <Setter Property="TextWrapping" Value="Wrap"/>
+        </Style>
+        <Style x:Key="ButtonStyle" TargetType="Button">
+            <Setter Property="FontWeight" Value="DemiBold"/>
+            <Setter Property="FontFamily" Value="Montserrat"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="Background" Value="#8493d6"/>
+        </Style>
+
+    </Page.Resources>
+
+    <Grid Height="750" Width="430">
+        <StackPanel Background="#F5FBFF" Orientation="Vertical" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Height="Auto">
+            <Label Content="Renovation Recommendation" VerticalAlignment="Top" HorizontalAlignment="Center" Style="{StaticResource LabelFontStyle}" RenderTransformOrigin="0.478,-1.701"/>
+            <StackPanel Orientation="Horizontal" Margin="5" HorizontalAlignment="Center">
+                <TextBlock Text="Accommodation: " Style="{StaticResource TextBlockFontStyle}" FontWeight="SemiBold"/>
+                <TextBlock Text="{Binding SelectedUnratedAccommodation.AccommodationName}" Style="{StaticResource TextBlockFontStyle}"/>
+            </StackPanel>
+
+
+
+                <StackPanel Orientation="Horizontal" Margin="0,20,0,0" Width="Auto" Height="Auto" Validation.ErrorTemplate="{StaticResource ValidationTemplate}" HorizontalAlignment="Center">
+                    <RadioButton Name="radiobutton1" IsChecked="{Binding RadioButton1IsChecked, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}" VerticalAlignment="Center" Margin="10,0,10,0"/>
+                    <TextBlock Text="it would be nice to renovate some small things, but everthing works as it should without it" Style="{StaticResource ResourceKey=TextBlockFontStyle}"  Height="Auto" Width="343"/>
+                </StackPanel>
+            <StackPanel Orientation="Horizontal" Margin="0,5,0,0" Width="Auto" Height="Auto" Validation.ErrorTemplate="{StaticResource ValidationTemplate}" HorizontalAlignment="Center">
+                    <RadioButton Name="radiobutton2" IsChecked="{Binding RadioButton2IsChecked, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}" VerticalAlignment="Center" Margin="10,0,10,0"/>
+                    <TextBlock Text="small gripes, if you removed them, accommodation would be perfect" Style="{StaticResource ResourceKey=TextBlockFontStyle}" Height="Auto" Width="343"/>
+                </StackPanel>
+            <StackPanel Orientation="Horizontal" Margin="0,5,0,0" Width="Auto" Height="Auto" Validation.ErrorTemplate="{StaticResource ValidationTemplate}" HorizontalAlignment="Center">
+                    <RadioButton Name="radiobutton3" IsChecked="{Binding RadioButton3IsChecked, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}" VerticalAlignment="Center" Margin="10,0,10,0"/>
+                    <TextBlock Text="a few things that really bothered me should be renovated" Style="{StaticResource ResourceKey=TextBlockFontStyle}" Height="Auto" Width="343"/>
+                </StackPanel>
+            <StackPanel Orientation="Horizontal" Margin="0,5,0,0" Width="Auto" Height="Auto" Validation.ErrorTemplate="{StaticResource ValidationTemplate}" HorizontalAlignment="Center">
+                    <RadioButton Name="radiobutton4" IsChecked="{Binding RadioButton4IsChecked, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}" VerticalAlignment="Center" Margin="10,0,10,0"/>
+                    <TextBlock Text="a lot of bad things, renovation really necessary" Style="{StaticResource ResourceKey=TextBlockFontStyle}" Height="Auto" Width="343"/>
+                </StackPanel>
+            <StackPanel Orientation="Horizontal" Margin="0,5,0,0" Width="Auto" Height="Auto" Validation.ErrorTemplate="{StaticResource ValidationTemplate}" HorizontalAlignment="Center">
+                    <RadioButton Name="radiobutton5" IsChecked="{Binding RadioButton5IsChecked, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}" VerticalAlignment="Center" Margin="10,0,10,0"/>
+                    <TextBlock Text="the accommodation is in a very bad condition and is not worth renting at all if you don't renovate" Style="{StaticResource ResourceKey=TextBlockFontStyle}" Height="Auto" Width="343"/>
+                </StackPanel>
+
+
+            <StackPanel Orientation="Vertical" HorizontalAlignment="Center" Margin="20">
+                <Label Content="State of Accommodation:" Style="{StaticResource LabelFontStyle}" FontWeight="SemiBold" FontSize="11" Foreground="Black"/>
+                <TextBox x:Name="informationTextBox" Text="{Binding Path=Information, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}" Width="250" Height="150" Validation.ErrorTemplate="{StaticResource ValidationTemplate}"/>
+            </StackPanel>
+
+            <Button x:Name="recommendButton" Command="{Binding RecommendCommand}" Content="Send Recommendation" Width="170" Margin="0,5,0,0" Style="{StaticResource ButtonStyle}"/>
+        </StackPanel>
+    </Grid>
+</Page>

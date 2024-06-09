@@ -1,0 +1,25 @@
+@startuml
+actor Guest
+participant "UserService" as US
+participant "AccommodationReservationService" as ARS
+participant "UserRepository" as UR
+
+Guest -> US:  UpdateUserTitle(int id)
+activate US
+US -> ARS ++: GetAll()
+ARS --> US: accommodationReservations
+deactivate ARS
+US -> UR: GetById(int id)
+activate UR
+UR --> US: guest
+alt guest.UserType == UserType.GUEST
+    US -> US: ConsiderPromotionToSuperGuest(guest, numberOfReservations)
+else guest.UserType == UserType.SUPERGUEST
+    US -> US: ConsiderReturningToGuest(guest, numberOfReservations)
+end
+US -> UR: Update(guest)
+UR --> US: updatedUser
+deactivate UR
+US --> Guest: updatedUserTitle
+deactivate US
+@enduml

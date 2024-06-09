@@ -1,0 +1,119 @@
+﻿<Window x:Class="BookingApp.WPF.View.GuestOverview"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:BookingApp.WPF.View"
+        xmlns:utilities="clr-namespace:BookingApp.Applications.Utilities"
+        mc:Ignorable="d"
+        Title="BookingApp" Height="750" Width="430"
+        WindowStartupLocation="CenterScreen"
+        ResizeMode="NoResize"
+        Icon="/Resources/favicon.ico">
+
+    <Window.Resources>
+        <Style x:Key="LabelFontStyle" TargetType="Label">
+            <Setter Property="FontFamily" Value="Montserrat"/>
+            <Setter Property="FontSize" Value="20"/>
+            <Setter Property="Foreground" Value="GhostWhite"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+        </Style>
+
+        <Style x:Key="ContextMenuStyle" TargetType="MenuItem">
+            <Setter Property="FontFamily" Value="Montserrat"/>
+            <Setter Property="FontSize" Value="10"/>
+            <Setter Property="FontWeight" Value="DemiBold"/>
+            <Setter Property="Foreground" Value="#8493d6"/>
+            <Setter Property="Background" Value="#F5FBFF"/>
+
+        </Style>
+    </Window.Resources>
+
+    <Grid Background="#F5FBFF">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*" x:Name="Top"/>
+            <RowDefinition Height="7*" x:Name="Body"/>
+            <RowDefinition Height="2*" x:Name="Bottom"/>
+        </Grid.RowDefinitions>
+
+        <!-- Top -->
+        <Grid Grid.Row="0" Background="#8493d6" VerticalAlignment="Top" Height="40">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <Image Source="/Resources/GuestIcons/back.png" Height="20" Width="20" Margin="10,0,0,0" MouseLeftButtonDown="Back_Click"/>
+            <Label Grid.Column="1" Content="BookingApp" Style="{StaticResource LabelFontStyle}" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="20,0,0,0"/>
+            <StackPanel Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Center">
+                <Image x:Name="NotificationsImage" Height="20" Width="20" Margin="0,0,10,0" MouseLeftButtonDown="Notifications_Click" Source="{Binding ImageSource}"/>
+                <Image Source="/Resources/GuestIcons/menu.png" Height="20" Width="20" Margin="0,0,10,0" MouseLeftButtonDown="Settings_Click">
+                    <Image.ContextMenu>
+                        <ContextMenu Name="OptionsMenu">
+                            <MenuItem Header="Start Demo" Click="DemoModeStart_Click" Style="{StaticResource ContextMenuStyle}"/>
+                            <MenuItem Header="Stop Demo" Click="DemoModeStop_Click" Style="{StaticResource ContextMenuStyle}"/>
+                            <MenuItem Header="My Account" Click="MyAccount_Click" Style="{StaticResource ContextMenuStyle}"/>
+                            <MenuItem Header="Sign Out" Click="SignOut_Click" Style="{StaticResource ContextMenuStyle}"/>
+                        </ContextMenu>
+                    </Image.ContextMenu>
+                </Image>
+            </StackPanel>
+        </Grid>
+
+        <!-- Body -->
+        <Grid Grid.Row="1">
+            <Frame x:Name="GuestOverviewFrame" NavigationUIVisibility="Hidden" Margin="0,0,0,-47"/>
+        </Grid>
+
+        <!-- Bottom -->
+        <Grid Grid.Row="2">
+            <!-- Back Button -->
+            <Border Background="GhostWhite" BorderBrush="GhostWhite" BorderThickness="1" Height="Auto" VerticalAlignment="Bottom">
+                <Border.Effect>
+                    <DropShadowEffect BlurRadius="5" ShadowDepth="1" Color="#8493d6"/>
+                </Border.Effect>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <Grid Grid.Column="0">
+                        <Button Name="AccommodationsButton" Click="AccommodationsButton_Click" Background="Transparent" BorderBrush="Transparent">
+                            <StackPanel Grid.Column="0" Orientation="Vertical" HorizontalAlignment="Center" Margin="4">
+                                <Image Source="/Resources/GuestIcons/hotel.png" Height="25" Width="25" VerticalAlignment="Center"/>
+                            </StackPanel>
+                        </Button>
+                    </Grid>
+
+                    <Grid Grid.Column="1">
+                        <Button Name="ReviewsButton" Click="ReviewsButton_Click" Background="Transparent" BorderBrush="Transparent">
+                            <StackPanel Grid.Column="1" Orientation="Vertical" HorizontalAlignment="Center" Margin="4">
+                                <Image Source="/Resources/GuestIcons/review.png" Height="25" Width="25" VerticalAlignment="Center"/>
+                            </StackPanel>
+                        </Button>
+                    </Grid>
+
+                    <Grid Grid.Column="2">
+                        <Button Name="ForumButton" Click="ForumsButton_Click" Background="Transparent" BorderBrush="Transparent">
+                            <StackPanel Grid.Column="2" Orientation="Vertical" HorizontalAlignment="Center" Margin="4">
+                                <Image Source="/Resources/GuestIcons/forum.png" Height="25" Width="25" VerticalAlignment="Center"/>
+                            </StackPanel>
+                        </Button>
+                    </Grid>
+
+                    <Grid Grid.Column="3">
+                        <Button Name="MyAccountButton" Click="MyAccount_Click" Background="Transparent" BorderBrush="Transparent">
+                            <StackPanel Grid.Column="3" Orientation="Vertical" HorizontalAlignment="Center" Margin="4">
+                                <Image Source="/Resources/GuestIcons/profile.png" Height="25" Width="25" VerticalAlignment="Center"/>
+                            </StackPanel>
+                        </Button>
+                    </Grid>
+                </Grid>
+            </Border>
+        </Grid>
+
+    </Grid>
+</Window>

@@ -1,0 +1,66 @@
+﻿<Page x:Class="BookingApp.WPF.View.GuestView.AddComment"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:BookingApp.WPF.View.GuestView"
+      mc:Ignorable="d" 
+      Title="AddComment" Height="750" Width="430">
+
+    <Page.Resources>
+        <ControlTemplate x:Key="ValidationTemplate">
+            <StackPanel>
+                <AdornedElementPlaceholder x:Name="textBox" />
+                <TextBlock Text="{Binding [0].ErrorContent}" Foreground="Red" />
+            </StackPanel>
+        </ControlTemplate>
+
+        <Style x:Key="LabelFontStyle" TargetType="Label">
+            <Setter Property="FontFamily" Value="Montserrat"/>
+            <Setter Property="FontSize" Value="20"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="Foreground" Value="DarkSlateGray"/>
+        </Style>
+        <Style x:Key="ComboBoxStyle" TargetType="ComboBox">
+            <Setter Property="FontFamily" Value="Montserrat"/>
+            <Setter Property="FontSize" Value="12"/>
+            <Setter Property="Foreground" Value="Black"/>
+        </Style>
+        <Style x:Key="ButtonStyle" TargetType="Button">
+            <Setter Property="FontWeight" Value="DemiBold"/>
+            <Setter Property="FontFamily" Value="Montserrat"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="Background" Value="#8493d6"/>
+        </Style>
+        <Style x:Key="TextBlockFontStyle" TargetType="TextBlock">
+            <Setter Property="FontFamily" Value="Montserrat"/>
+            <Setter Property="FontSize" Value="12"/>
+            <Setter Property="Foreground" Value="Black"/>
+        </Style>
+    </Page.Resources>
+
+    <Grid Background="#F5FBFF">
+        <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="20">
+            <Label Content="Add Comment" Style="{StaticResource LabelFontStyle}" HorizontalAlignment="Center"/>
+
+            <StackPanel Orientation="Vertical">
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                    <TextBlock Text="City: " Style="{StaticResource TextBlockFontStyle}" FontWeight="SemiBold"/>
+                    <TextBlock Text="{Binding SelectedForum.City}" Style="{StaticResource TextBlockFontStyle}" />
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                    <TextBlock Text="Country: " Style="{StaticResource TextBlockFontStyle}" FontWeight="SemiBold"/>
+                    <TextBlock Text="{Binding SelectedForum.Country}" Style="{StaticResource TextBlockFontStyle}"/>
+                </StackPanel>
+            </StackPanel>
+
+            <StackPanel Orientation="Vertical" HorizontalAlignment="Center" Margin="5">
+
+                <Label Content="Enter Comment:" Style="{StaticResource LabelFontStyle}" FontWeight="SemiBold" FontSize="11" Foreground="Black"/>
+                <TextBox x:Name="commentTextBox" Text="{Binding Path=NewComment.Text, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}" Width="250" Height="150" Validation.ErrorTemplate="{StaticResource ValidationTemplate}"/>
+            </StackPanel>
+            <Button x:Name="addComment" Command="{Binding AddCommentCommand}" Content="Add Comment" Width="95" Style="{StaticResource ButtonStyle}" Margin="5"/>
+            <Image Source="/Resources/GuestIcons/background.png" HorizontalAlignment="Center" Height="229" Width="319" Margin="0,20,0,0"/>
+        </StackPanel>
+    </Grid>
+</Page>

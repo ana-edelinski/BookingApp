@@ -1,0 +1,356 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net6.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="WPF\View\OwnerView\Themes\**" />
+    <EmbeddedResource Remove="WPF\View\OwnerView\Themes\**" />
+    <None Remove="WPF\View\OwnerView\Themes\**" />
+    <Page Remove="WPF\View\OwnerView\Themes\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="Applications\Utilities\Themes\Font Awesome 6 Free-Solid-900.otf" />
+    <None Remove="Resources\AccommodationImages\Alpi1.jpg" />
+    <None Remove="Resources\AccommodationImages\Alpi2.jpg" />
+    <None Remove="Resources\AccommodationImages\Alpi3.jpg" />
+    <None Remove="Resources\AccommodationImages\Alpi4.jpg" />
+    <None Remove="Resources\AccommodationImages\Cottage1.jpg" />
+    <None Remove="Resources\AccommodationImages\Cottage2.jpg" />
+    <None Remove="Resources\AccommodationImages\Cottage3.jpg" />
+    <None Remove="Resources\AccommodationImages\HotelMunich.jpg" />
+    <None Remove="Resources\AccommodationImages\HotelMunich2.jpg" />
+    <None Remove="Resources\AccommodationImages\HotelMunich3.jpg" />
+    <None Remove="Resources\AccommodationImages\HotelMunich4.jpg" />
+    <None Remove="Resources\AccommodationImages\HotelPupin1.jpg" />
+    <None Remove="Resources\AccommodationImages\HotelPupin2.jpg" />
+    <None Remove="Resources\AccommodationImages\HotelPupin3.jpg" />
+    <None Remove="Resources\AccommodationImages\HotelPupin4.jpg" />
+    <None Remove="Resources\AccommodationImages\HotelPupin5.jpg" />
+    <None Remove="Resources\AccommodationImages\HotelSlobodaSabac.png" />
+    <None Remove="Resources\AccommodationImages\NewYorker1.jpg" />
+    <None Remove="Resources\AccommodationImages\NewYorker2.jpg" />
+    <None Remove="Resources\AccommodationImages\NewYorker3.jpg" />
+    <None Remove="Resources\AccommodationImages\SanFrancisco1.jpg" />
+    <None Remove="Resources\AccommodationImages\SanFrancisco2.jpg" />
+    <None Remove="Resources\AccommodationImages\SanFrancisco3.jpg" />
+    <None Remove="Resources\AccommodationImages\SheratonNS1.jpg" />
+    <None Remove="Resources\AccommodationImages\SheratonNS2.jpg" />
+    <None Remove="Resources\AccommodationImages\SheratonNS3.jpg" />
+    <None Remove="Resources\AccommodationImages\SheratonNS4.jpg" />
+    <None Remove="Resources\AccommodationImages\SlobodaSabac1.jpg" />
+    <None Remove="Resources\AccommodationImages\SlobodaSabac2.jpg" />
+    <None Remove="Resources\AccommodationImages\SlobodaSabac3.jpg" />
+    <None Remove="Resources\AccommodationImages\SlobodaSabac4.jpg" />
+    <None Remove="Resources\AccommodationImages\SlobodaSabac5.jpg" />
+    <None Remove="Resources\Data\locations.csv" />
+    <None Remove="Resources\favicon.ico" />
+    <None Remove="Resources\GuestIcons\back.png" />
+    <None Remove="Resources\GuestIcons\background.png" />
+    <None Remove="Resources\GuestIcons\bullet.png" />
+    <None Remove="Resources\GuestIcons\calendar1.png" />
+    <None Remove="Resources\GuestIcons\calendar2.png" />
+    <None Remove="Resources\GuestIcons\discover.png" />
+    <None Remove="Resources\GuestIcons\down-arrow.png" />
+    <None Remove="Resources\GuestIcons\explore-forums.png" />
+    <None Remove="Resources\GuestIcons\location.png" />
+    <None Remove="Resources\GuestIcons\my-account.png" />
+    <None Remove="Resources\GuestIcons\my-discussions.png" />
+    <None Remove="Resources\GuestIcons\new.png" />
+    <None Remove="Resources\GuestIcons\notifications-new.png" />
+    <None Remove="Resources\GuestIcons\open-forum.png" />
+    <None Remove="Resources\GuestIcons\planet-earth.png" />
+    <None Remove="Resources\GuestIcons\user.png" />
+    <None Remove="Resources\Images\add.png" />
+    <None Remove="Resources\Images\calendar.png" />
+    <None Remove="Resources\Images\delete.png" />
+    <None Remove="Resources\Images\demo-mode.png" />
+    <None Remove="Resources\Images\discover-make-reservation.png" />
+    <None Remove="Resources\Images\edit.png" />
+    <None Remove="Resources\Images\forum.png" />
+    <None Remove="Resources\Images\globe-earth.png" />
+    <None Remove="Resources\Images\hotel.png" />
+    <None Remove="Resources\Images\left-arrow.png" />
+    <None Remove="Resources\Images\medal.png" />
+    <None Remove="Resources\Images\menu.png" />
+    <None Remove="Resources\Images\notifications.png" />
+    <None Remove="Resources\Images\pencil.png" />
+    <None Remove="Resources\Images\previous.png" />
+    <None Remove="Resources\Images\profile.png" />
+    <None Remove="Resources\Images\rescheduling.png" />
+    <None Remove="Resources\Images\review.png" />
+    <None Remove="Resources\Images\right-arrow.png" />
+    <None Remove="Resources\Images\upload.png" />
+    <None Remove="Resources\Images\view.png" />
+    <None Remove="Resources\OwnerIcons\CottageAccommodation.png" />
+    <None Remove="Resources\OwnerIcons\HotelAccommodation.png" />
+    <None Remove="Resources\OwnerIcons\HouseAccommodation.png" />
+    <None Remove="Resources\OwnerIcons\LArrow.png" />
+    <None Remove="Resources\OwnerIcons\LocationIcon.png" />
+    <None Remove="Resources\OwnerIcons\RArrow.png" />
+    <None Remove="Resources\OwnerIcons\StarIcon.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Resources\AccommodationImages\Alpi1.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\AccommodationImages\Alpi2.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\AccommodationImages\Alpi3.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\AccommodationImages\Alpi4.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\AccommodationImages\Cottage1.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\AccommodationImages\Cottage2.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\AccommodationImages\Cottage3.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\AccommodationImages\HotelMunich.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\AccommodationImages\HotelMunich2.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\AccommodationImages\HotelMunich3.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\AccommodationImages\HotelMunich4.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\AccommodationImages\HotelPupin1.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\AccommodationImages\HotelPupin2.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\AccommodationImages\HotelPupin3.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\AccommodationImages\HotelPupin4.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\AccommodationImages\HotelPupin5.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\AccommodationImages\NewYorker1.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\AccommodationImages\NewYorker2.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\AccommodationImages\NewYorker3.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\AccommodationImages\SanFrancisco1.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\AccommodationImages\SanFrancisco2.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\AccommodationImages\SanFrancisco3.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\AccommodationImages\SheratonNS1.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\AccommodationImages\SheratonNS2.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\AccommodationImages\SheratonNS3.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\AccommodationImages\SheratonNS4.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\AccommodationImages\SlobodaSabac1.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\AccommodationImages\SlobodaSabac2.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\AccommodationImages\SlobodaSabac3.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\AccommodationImages\SlobodaSabac4.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\AccommodationImages\SlobodaSabac5.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Data\locations.csv">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\GuestIcons\background.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\GuestIcons\bullet.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\GuestIcons\down-arrow.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\GuestIcons\explore-forums.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Resource Include="Resources\GuestIcons\location.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Content Include="Resources\GuestIcons\my-account.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\GuestIcons\new.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Images\add.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\GuestIcons\calendar.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Images\delete.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\GuestIcons\demo-mode.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\GuestIcons\discover-make-reservation.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Images\edit.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\GuestIcons\forum.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\GuestIcons\globe-earth.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\GuestIcons\hotel.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\GuestIcons\medal.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\GuestIcons\menu.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\GuestIcons\notifications.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\GuestIcons\pencil.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\GuestIcons\profile.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\GuestIcons\rescheduling.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\GuestIcons\review.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Resource Include="Applications\Utilities\Themes\Font Awesome 6 Free-Solid-900.otf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\favicon.ico" />
+    <Resource Include="Resources\GuestIcons\back.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\GuestIcons\my-discussions.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\GuestIcons\notifications-new.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\GuestIcons\open-forum.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\GuestIcons\upload.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Content Include="Resources\Images\view.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\OwnerIcons\CottageAccommodation.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\OwnerIcons\HotelAccommodation.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\OwnerIcons\HouseAccommodation.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\OwnerIcons\LArrow.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\OwnerIcons\LocationIcon.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\OwnerIcons\RArrow.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\OwnerIcons\StarIcon.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Resources\AccommodationImages\HotelSlobodaSabac.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Extended.Wpf.Toolkit" Version="4.6.0" />
+    <PackageReference Include="QuestPDF" Version="2024.3.10" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Resources\GuestIcons\left-arrow.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\GuestIcons\right-arrow.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\GuestIcons\user.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Applications\Utilities\Localization\Resources.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="Applications\Utilities\Localization\Resources.en-US.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resource.en-US.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Applications\Utilities\Localization\Resources.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Resources\AccommodationRatingsImages\" />
+  </ItemGroup>
+
+</Project>

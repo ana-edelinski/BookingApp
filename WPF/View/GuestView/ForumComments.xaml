@@ -1,0 +1,91 @@
+﻿<Page x:Class="BookingApp.WPF.View.GuestView.ForumComments"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:BookingApp.WPF.View.GuestView"
+      mc:Ignorable="d" 
+      Title="ForumComments" Height="750" Width="430">
+
+    <Page.Resources>
+        <Style x:Key="LabelFontStyle" TargetType="Label">
+            <Setter Property="FontFamily" Value="Montserrat"/>
+            <Setter Property="FontSize" Value="20"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="Foreground" Value="DarkSlateGray"/>
+        </Style>
+        <Style x:Key="ButtonStyle" TargetType="Button">
+            <Setter Property="FontWeight" Value="DemiBold"/>
+            <Setter Property="FontFamily" Value="Montserrat"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="Background" Value="#8493d6"/>
+        </Style>
+        <Style x:Key="TextBlockFontStyle" TargetType="TextBlock">
+            <Setter Property="FontFamily" Value="Montserrat"/>
+            <Setter Property="FontSize" Value="12"/>
+            <Setter Property="Foreground" Value="Black"/>
+        </Style>
+        <Style x:Key="CommentBorderStyle" TargetType="Border">
+            <Setter Property="BorderBrush" Value="White"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="CornerRadius" Value="8"/>
+            <Setter Property="Height" Value="Auto"/>
+            <Setter Property="VerticalAlignment" Value="Stretch"/>
+            <Setter Property="Width" Value="330"/>
+            <Setter Property="Background" Value="White"/>
+            <Setter Property="Effect">
+                <Setter.Value>
+                    <DropShadowEffect BlurRadius="5" ShadowDepth="1" Color="#8493d6"/>
+                </Setter.Value>
+            </Setter>
+            <Style.Triggers>
+                <DataTrigger Binding="{Binding WasPresent}" Value="True">
+                    <Setter Property="BorderBrush" Value="Gold"/>
+                    <Setter Property="BorderThickness" Value="3"/>
+                </DataTrigger>
+            </Style.Triggers>
+        </Style>
+    </Page.Resources>
+
+    <Grid Background="#F5FBFF">
+        <StackPanel Orientation="Vertical" VerticalAlignment="Top" HorizontalAlignment="Center">
+            <StackPanel Orientation="Vertical">
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                    <TextBlock Text="City: " Style="{StaticResource TextBlockFontStyle}" FontWeight="SemiBold"/>
+                    <TextBlock Text="{Binding SelectedForum.City}" Style="{StaticResource TextBlockFontStyle}" />
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                    <TextBlock Text="Country: " Style="{StaticResource TextBlockFontStyle}" FontWeight="SemiBold"/>
+                    <TextBlock Text="{Binding SelectedForum.Country}" Style="{StaticResource TextBlockFontStyle}"/>
+                </StackPanel>
+            </StackPanel>
+            <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Hidden" Background="#F5FBFF" Height="Auto" Margin="0,20,0,0">
+                <ListBox x:Name="allComments" ItemsSource="{Binding AllComments, UpdateSourceTrigger=PropertyChanged}" Width="Auto" Height="Auto" HorizontalAlignment="Center" Background="#F5FBFF" BorderThickness="0" ScrollViewer.VerticalScrollBarVisibility="Auto">
+                    <ListBox.ItemTemplate>
+                        <DataTemplate>
+                            <Border Style="{StaticResource CommentBorderStyle}">
+                                <Grid HorizontalAlignment="Stretch" VerticalAlignment="Center" Height="Auto" Width="Auto">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="Auto"/>
+                                        <ColumnDefinition Width="*"/>
+                                    </Grid.ColumnDefinitions>
+                                    <StackPanel Orientation="Vertical" Grid.Column="0" Margin="10" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                                        <StackPanel Orientation="Horizontal" Margin="5" VerticalAlignment="Stretch">
+                                            <TextBlock Text="Comment: " FontWeight="SemiBold" Style="{StaticResource TextBlockFontStyle}" VerticalAlignment="Top"/>
+                                            <TextBlock Text="{Binding Text}" Style="{StaticResource TextBlockFontStyle}" TextWrapping="Wrap" Width="250" VerticalAlignment="Stretch"/>
+                                        </StackPanel>
+                                        <StackPanel Orientation="Horizontal" Margin="5">
+                                            <TextBlock Text="Created by: " FontWeight="SemiBold" Style="{StaticResource TextBlockFontStyle}"/>
+                                            <TextBlock Text="{Binding Author}" Style="{StaticResource TextBlockFontStyle}" />
+                                        </StackPanel>
+                                    </StackPanel>
+                                </Grid>
+                            </Border>
+                        </DataTemplate>
+                    </ListBox.ItemTemplate>
+                </ListBox>
+            </ScrollViewer>
+            <Button x:Name="addCommentButton" Command="{Binding AddCommentCommand}" Content="Add Comment" Width="120" Margin="0,5,0,0" Style="{StaticResource ButtonStyle}" IsEnabled="{Binding IsForumOpened}" />
+        </StackPanel>
+    </Grid>
+</Page>

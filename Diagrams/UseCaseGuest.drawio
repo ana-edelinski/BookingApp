@@ -1,0 +1,351 @@
+<mxfile host="app.diagrams.net" modified="2024-06-03T10:21:33.839Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36" etag="58TKIQhIelEzzRmf7R9Q" version="24.4.13" type="device" pages="9">
+  <diagram name="UseCase" id="F4lXUHbuASYgeZ95aaM7">
+    <mxGraphModel dx="1985" dy="880" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="yZRO5aMjyUrZMawQTI_j-1" value="" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="540" y="200" width="690" height="610" as="geometry" />
+        </mxCell>
+        <UserObject label="Anywhere Anytime pretraga" link="data:page/id,LLLNo-e8NWWDnqVtgvML" id="yZRO5aMjyUrZMawQTI_j-2">
+          <mxCell style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+            <mxGeometry x="620" y="280" width="160" height="90" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <mxCell id="yZRO5aMjyUrZMawQTI_j-3" value="Gost" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;" parent="1" vertex="1">
+          <mxGeometry x="310" y="400" width="60" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="yZRO5aMjyUrZMawQTI_j-7" value="" style="endArrow=none;html=1;rounded=0;" parent="1" target="yZRO5aMjyUrZMawQTI_j-2" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="380" y="430" as="sourcePoint" />
+            <mxPoint x="430" y="380" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <UserObject label="Rezervacija smeštaja" link="data:page/id,r0zH2Qn9LLLq1gVmwGfQ" id="yZRO5aMjyUrZMawQTI_j-8">
+          <mxCell style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+            <mxGeometry x="960" y="250" width="160" height="90" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="Ostavljanje komentara na forumu" link="data:page/id,2OwjpxUvSQmeIKflXekP" id="yZRO5aMjyUrZMawQTI_j-10">
+          <mxCell style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+            <mxGeometry x="620" y="590" width="160" height="90" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <mxCell id="VKzPV9TMLRMsQqJrYZlU-6" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=none;endFill=0;" parent="1" source="yZRO5aMjyUrZMawQTI_j-12" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="390" y="455" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <UserObject label="Otvaranje novog foruma" link="data:page/id,2G6y_0YE21sbZ2rZttqD" id="yZRO5aMjyUrZMawQTI_j-12">
+          <mxCell style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+            <mxGeometry x="620" y="410" width="160" height="90" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <mxCell id="yZRO5aMjyUrZMawQTI_j-14" value="" style="endArrow=none;html=1;rounded=0;" parent="1" target="yZRO5aMjyUrZMawQTI_j-10" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="380" y="480" as="sourcePoint" />
+            <mxPoint x="480" y="520" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="VKzPV9TMLRMsQqJrYZlU-2" value="" style="endArrow=open;html=1;rounded=0;entryX=0.144;entryY=0.404;entryDx=0;entryDy=0;entryPerimeter=0;dashed=1;endFill=0;" parent="1" source="yZRO5aMjyUrZMawQTI_j-8" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="890" y="310" as="sourcePoint" />
+            <mxPoint x="779.9999999999999" y="326.14" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="VKzPV9TMLRMsQqJrYZlU-3" value="&amp;lt;&amp;lt;extends&amp;gt;&amp;gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="VKzPV9TMLRMsQqJrYZlU-2" vertex="1" connectable="0">
+          <mxGeometry x="-0.0901" y="-1" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <UserObject label="Zatvaranje foruma" link="data:page/id,ZCGtlZT56ulCnJHFD69q" id="VKzPV9TMLRMsQqJrYZlU-7">
+          <mxCell style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+            <mxGeometry x="960" y="370" width="160" height="90" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <mxCell id="VKzPV9TMLRMsQqJrYZlU-8" value="" style="endArrow=open;html=1;rounded=0;dashed=1;endFill=0;exitX=0;exitY=0.5;exitDx=0;exitDy=0;" parent="1" source="VKzPV9TMLRMsQqJrYZlU-7" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="870" y="500" as="sourcePoint" />
+            <mxPoint x="770" y="433" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="VKzPV9TMLRMsQqJrYZlU-9" value="&amp;lt;&amp;lt;extends&amp;gt;&amp;gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="VKzPV9TMLRMsQqJrYZlU-8" vertex="1" connectable="0">
+          <mxGeometry x="0.0637" y="-1" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <UserObject label="Slanje obaveštenja vlasniku" link="data:page/id,ZeWW_6U7ulO1Mio4F9Ze" id="y8-gNHY1-I1sUYwAOdaj-1">
+          <mxCell style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+            <mxGeometry x="960" y="485" width="160" height="90" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <mxCell id="y8-gNHY1-I1sUYwAOdaj-2" value="" style="endArrow=open;html=1;rounded=0;exitX=0.933;exitY=0.759;exitDx=0;exitDy=0;exitPerimeter=0;dashed=1;endFill=0;" parent="1" source="yZRO5aMjyUrZMawQTI_j-12" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="940.56" y="470" as="sourcePoint" />
+            <mxPoint x="960" y="524.48" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="y8-gNHY1-I1sUYwAOdaj-3" value="&amp;lt;&amp;lt;include&amp;gt;&amp;gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="y8-gNHY1-I1sUYwAOdaj-2" vertex="1" connectable="0">
+          <mxGeometry x="-0.1224" y="-1" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="y8-gNHY1-I1sUYwAOdaj-10" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=none;endFill=0;" parent="1" source="y8-gNHY1-I1sUYwAOdaj-4" target="y8-gNHY1-I1sUYwAOdaj-1" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="y8-gNHY1-I1sUYwAOdaj-4" value="Vlasnik" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;" parent="1" vertex="1">
+          <mxGeometry x="1320" y="500" width="30" height="60" as="geometry" />
+        </mxCell>
+        <UserObject label="Provera posete lokaciji" link="data:page/id,QnW6zYKsdnXbqkMrTkRj" id="jrR86vkSHIaEDVROmazJ-1">
+          <mxCell style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+            <mxGeometry x="950" y="600" width="160" height="90" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="Označavanje korisnog foruma" link="data:page/id,mlD73xQFkVZWY43slJA6" id="jrR86vkSHIaEDVROmazJ-2">
+          <mxCell style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+            <mxGeometry x="950" y="700" width="160" height="90" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <mxCell id="jrR86vkSHIaEDVROmazJ-3" value="" style="endArrow=open;html=1;rounded=0;exitX=0.933;exitY=0.759;exitDx=0;exitDy=0;exitPerimeter=0;dashed=1;endFill=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" target="jrR86vkSHIaEDVROmazJ-1" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="780" y="630" as="sourcePoint" />
+            <mxPoint x="971" y="676.48" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="jrR86vkSHIaEDVROmazJ-4" value="&amp;lt;&amp;lt;include&amp;gt;&amp;gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="jrR86vkSHIaEDVROmazJ-3" vertex="1" connectable="0">
+          <mxGeometry x="-0.1224" y="-1" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="jrR86vkSHIaEDVROmazJ-5" value="" style="endArrow=open;html=1;rounded=0;exitX=0.933;exitY=0.759;exitDx=0;exitDy=0;exitPerimeter=0;dashed=1;endFill=0;entryX=0.038;entryY=0.364;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" target="jrR86vkSHIaEDVROmazJ-2" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="760" y="665" as="sourcePoint" />
+            <mxPoint x="930" y="680" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="jrR86vkSHIaEDVROmazJ-6" value="&amp;lt;&amp;lt;include&amp;gt;&amp;gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="jrR86vkSHIaEDVROmazJ-5" vertex="1" connectable="0">
+          <mxGeometry x="-0.1224" y="-1" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="BYhmgwYNzWlUBUnQlQkC-2" value="Supergost" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;" parent="1" vertex="1">
+          <mxGeometry x="310" y="640" width="60" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="BYhmgwYNzWlUBUnQlQkC-3" value="" style="endArrow=classic;html=1;rounded=0;" parent="1" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="340" y="630" as="sourcePoint" />
+            <mxPoint x="340" y="550" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="LLLNo-e8NWWDnqVtgvML" name="Anywhere Anytime Pretraga">
+    <mxGraphModel dx="2163" dy="715" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="YO4UfT18DXqMu8JTU1OW-1" value="Anywhere Anytime pretraga" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="70" y="60" width="160" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="YO4UfT18DXqMu8JTU1OW-2" value="&lt;font style=&quot;font-size: 14px;&quot;&gt;&lt;b&gt;Preduslov:&lt;/b&gt; Korisnik je prijavljen na sistem i ima ulogu (super)gosta&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="-20" y="200" width="440" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="YO4UfT18DXqMu8JTU1OW-3" value="&lt;span style=&quot;font-size: 14px;&quot;&gt;&lt;b&gt;Posledica: &lt;/b&gt;Lista slobodnih smeštaja&lt;/span&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="-20" y="230" width="250" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="YO4UfT18DXqMu8JTU1OW-4" value="&lt;span style=&quot;font-size: 14px;&quot;&gt;&lt;b&gt;Osnovni tok:&lt;/b&gt;&lt;br&gt;1. Korisnik unosi broj ljudi&lt;br&gt;2. Korisnik unosi broj dana&lt;br&gt;3. Korisnik unosi opseg datuma&lt;br&gt;4. Sistem pretražuje slobodne smeštaje koji odgovaraju zadatim kriterijumima&lt;br&gt;5. Sistem prikazuje listu slobodnih smeštaja u traženom periodu&lt;br&gt;6. Korisnik pregleda slobodne smeštaje&lt;br&gt;7. Korisnik bira željeni smeštaj&lt;/span&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="-10" y="265" width="500" height="150" as="geometry" />
+        </mxCell>
+        <mxCell id="YO4UfT18DXqMu8JTU1OW-5" value="&lt;span style=&quot;font-size: 14px;&quot;&gt;&lt;b&gt;Alternativni tok A:&lt;/b&gt;&lt;br&gt;1. Korisnik unosi broj ljudi&lt;br&gt;2. Korisnik unosi broj dana&lt;br&gt;3. Sistem pretražuje slobodne smeštaje koji odgovaraju zadatim kriterijumima (bez obzira na neunesen opseg datuma)&lt;br&gt;5. Sistem prikazuje listu slobodnih smeštaja&lt;br&gt;6. Korisnik pregleda slobodne smeštaje&lt;br&gt;7. Korisnik bira željeni smeštaj&lt;/span&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="-10" y="430" width="760" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="Dqm1dodrEK-KAUPyi1SK-1" value="&lt;span style=&quot;font-size: 14px;&quot;&gt;&lt;b&gt;Alternativni tok B:&lt;/b&gt;&lt;br&gt;1. Korisnik nije uneo neki od obaveznih kriterijuma pretrage (broj dana/broj gostiju)&lt;/span&gt;&lt;div&gt;&lt;span style=&quot;font-size: 14px;&quot;&gt;2. Sistem ukazuje korisniku na obavezne kriterijume pretrage&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;font-size: 14px;&quot;&gt;3. Korisnik unosi obavezne kriterijume pretrage&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;font-size: 14px;&quot;&gt;4. Sistem pretražuje slobodne smeštaje koji odgovaraju zadatim kriterijumima&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;font-size: 14px;&quot;&gt;5. Sistem prikazuje listu slobodnih smeštaja&lt;br&gt;&lt;/span&gt;&lt;div&gt;&lt;span style=&quot;font-size: 14px;&quot;&gt;6. Korisnik pregleda slobodne smeštaje&lt;br&gt;7. Korisnik bira željeni smeštaj&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="-10" y="570" width="530" height="150" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="r0zH2Qn9LLLq1gVmwGfQ" name="Rezervacija smeštaja">
+    <mxGraphModel dx="1050" dy="572" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="o9yECbdMgy_y4xN66tMs-1" value="Rezervacija smeštaja" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="160" y="30" width="160" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="o9yECbdMgy_y4xN66tMs-2" value="&lt;font style=&quot;font-size: 14px;&quot;&gt;&lt;b&gt;Preduslov:&lt;/b&gt; Korisnik je odabrao smeštaj koji odgovara njegovim kriterijumima&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="60" y="170" width="500" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="o9yECbdMgy_y4xN66tMs-3" value="&lt;span style=&quot;font-size: 14px;&quot;&gt;&lt;b&gt;Posledica: &lt;/b&gt;Smeštaj je rezervisan&lt;/span&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="60" y="200" width="230" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="o9yECbdMgy_y4xN66tMs-4" value="&lt;span style=&quot;font-size: 14px;&quot;&gt;&lt;b&gt;Osnovni tok:&lt;/b&gt;&lt;br&gt;1. Korisnik bira jedan od predloženih datuma&lt;br&gt;2. Korisnik potvrđuje rezervaciju&lt;br&gt;3. Sistem kreira rezervaciju&lt;/span&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="70" y="230" width="300" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="o9yECbdMgy_y4xN66tMs-5" value="&lt;span style=&quot;font-size: 14px;&quot;&gt;&lt;b&gt;Alternativni tok B:&lt;/b&gt;&lt;br&gt;1. Korisnik odustaje od procesa rezervacije i vraća se na prethodnu stranicu&lt;/span&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="70" y="420" width="490" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="UrCvVwVIT8tPOcgfo5TX-1" value="&lt;span style=&quot;font-size: 14px;&quot;&gt;&lt;b&gt;Alternativni tok A:&lt;/b&gt;&lt;br&gt;1. Korisnik nije odabrao datume&lt;br&gt;2. Sistem obaveštava korisnika da je neophodno da odabere datume&lt;br&gt;3. Korisnik bira jedan od predloženih datuma&lt;/span&gt;&lt;div&gt;&lt;span style=&quot;font-size: 14px;&quot;&gt;4. Korisnik potvrđuje rezervaciju&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;font-size: 14px;&quot;&gt;5. Sistem kreira rezervaciju&lt;/span&gt;&lt;/div&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="70" y="310" width="450" height="110" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="2G6y_0YE21sbZ2rZttqD" name="Otvaranje novog foruma">
+    <mxGraphModel dx="1050" dy="572" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <UserObject label="Otvaranje novog foruma" link="data:page/id,2G6y_0YE21sbZ2rZttqD" id="mG43yGRi6iRwkSULTOzL-1">
+          <mxCell style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+            <mxGeometry x="50" y="30" width="160" height="90" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <mxCell id="zrPVwWUwNcRJP0hbb5Cb-1" value="&lt;font style=&quot;font-size: 14px;&quot;&gt;&lt;b&gt;Preduslov:&lt;/b&gt; Korisnik je prijavljen na sistem i ima ulogu (super)gosta&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="20" y="150" width="440" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="zrPVwWUwNcRJP0hbb5Cb-2" value="&lt;span style=&quot;font-size: 14px;&quot;&gt;&lt;b&gt;Posledice: &lt;/b&gt;Novi forum za odabranu lokaciju je kreiran i vlasnici koji imaju smeštaje na toj lokaciji su obavešteni&lt;/span&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="20" y="180" width="710" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="zrPVwWUwNcRJP0hbb5Cb-3" value="&lt;span style=&quot;font-size: 14px;&quot;&gt;&lt;b&gt;Osnovni tok:&lt;/b&gt;&lt;br&gt;1. Korisnik unosi lokaciju&lt;br&gt;2. Korisnik unosi prvi komentar&lt;br&gt;3. Korisnik potvrđuje otvaranje foruma&lt;br&gt;4. Sistem kreira forum sa zadatom lokacijom i prvim komentarom&lt;/span&gt;&lt;div&gt;&lt;span style=&quot;font-size: 14px;&quot;&gt;5. Sistem obaveštava vlasnike smeštaja na toj lokaciji da je novi forum otvoren&lt;/span&gt;&lt;/div&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="30" y="210" width="510" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="zrPVwWUwNcRJP0hbb5Cb-4" value="&lt;span style=&quot;font-size: 14px;&quot;&gt;&lt;b&gt;Alternativni tok A:&lt;/b&gt;&lt;br&gt;1. Korisnik nije uneo neki od kriterijuma (grad, državu ili prvi komentar)&lt;br&gt;2. Sistem ukazuje korisniku na obavezan unos&lt;br&gt;3. Korisnik unosi sve neophodne kriterijume&lt;br&gt;4. Korisnik potvrđuje otvaranje foruma&lt;/span&gt;&lt;div&gt;&lt;span style=&quot;font-size: 14px;&quot;&gt;5. Sistem kreira forum sa zadatom lokacijom i prvim komentarom&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;font-size: 14px;&quot;&gt;6. Sistem obaveštava vlasnike smeštaja na toj lokaciji da je novi forum otvoren&lt;/span&gt;&lt;/div&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="30" y="320" width="510" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="NqbvUE6W5pjumn2nADct-1" value="&lt;span style=&quot;font-size: 14px;&quot;&gt;&lt;b&gt;Alternativni tok C:&lt;/b&gt;&lt;br&gt;1. Korisnik odustaje od otvaranja foruma i vraća se na prethodnu stranicu&lt;/span&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="30" y="570" width="480" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="_0SJjevj8FtHjldXetpq-1" value="&lt;span style=&quot;font-size: 14px;&quot;&gt;&lt;b&gt;Alternativni tok B: Ne postoje vlasnici smeštaja na zadatoj lokaciji&lt;/b&gt;&lt;br&gt;1. Korisnik nije uneo neki od kriterijuma (grad, državu ili prvi komentar)&lt;br&gt;2. Sistem ukazuje korisniku na obavezan unos&lt;br&gt;3. Korisnik unosi sve neophodne kriterijume&lt;br&gt;4. Korisnik potvrđuje otvaranje foruma&lt;/span&gt;&lt;div&gt;&lt;span style=&quot;font-size: 14px;&quot;&gt;5. Sistem kreira forum sa zadatom lokacijom i prvim komentarom&lt;/span&gt;&lt;/div&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="30" y="450" width="460" height="110" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="ZCGtlZT56ulCnJHFD69q" name="Zatvaranje foruma">
+    <mxGraphModel dx="1050" dy="572" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="UldeSomKDk8Owy6geu3o-1" value="Zatvaranje foruma" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="90" y="20" width="160" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="-iVXXvTy68lgnk7egV5T-1" value="&lt;font style=&quot;font-size: 14px;&quot;&gt;&lt;b&gt;Preduslovi:&lt;/b&gt; Forum je otvoren i korisnik je kreator foruma&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="20" y="150" width="380" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="-iVXXvTy68lgnk7egV5T-2" value="&lt;span style=&quot;font-size: 14px;&quot;&gt;&lt;b&gt;Posledice: &lt;/b&gt;Forum je zatvoren i dodavanje komentara je onemogućeno&lt;/span&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="20" y="180" width="460" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="-iVXXvTy68lgnk7egV5T-3" value="&lt;span style=&quot;font-size: 14px;&quot;&gt;&lt;b&gt;Osnovni tok:&lt;/b&gt;&lt;br&gt;1. Korisnik bira forum koji želi i može da zatvori&lt;br&gt;&lt;/span&gt;&lt;div&gt;&lt;span style=&quot;font-size: 14px;&quot;&gt;2. Korisnik potvrđuje zatvaranje foruma&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;font-size: 14px;&quot;&gt;3. Sistem zatvara forum i onemogućuje dodavanje novih komentara&lt;/span&gt;&lt;/div&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="30" y="210" width="440" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="-iVXXvTy68lgnk7egV5T-4" value="&lt;span style=&quot;font-size: 14px;&quot;&gt;&lt;b&gt;Alternativni tok A:&lt;/b&gt;&lt;br&gt;1. Korisnik pokušava da zatvori forum koji je već zatvoren / nije njegov&lt;br&gt;&lt;/span&gt;&lt;div&gt;&lt;span style=&quot;font-size: 14px;&quot;&gt;2. Sistem onemogućava zatvaranje foruma koji je već zatvoren / nije njegov&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;font-size: 14px;&quot;&gt;3. Korisnik bira forum koji može da zatvori&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;font-size: 14px;&quot;&gt;4. Korisnik potvrđuje zatvaranje foruma&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;font-size: 14px;&quot;&gt;5. Sistem zatvara forum i onemogućuje dodavanje novih komentara&lt;/span&gt;&lt;/div&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="30" y="300" width="490" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="-iVXXvTy68lgnk7egV5T-5" value="&lt;span style=&quot;font-size: 14px;&quot;&gt;&lt;b&gt;Alternativni tok B:&lt;/b&gt;&lt;br&gt;1. Korisnik odustaje od zatvaranja foruma&lt;/span&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="30" y="420" width="280" height="50" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="ZeWW_6U7ulO1Mio4F9Ze" name="Slanje obaveštenja vlasniku">
+    <mxGraphModel dx="1050" dy="572" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="1h8KIZAglagA7nDbzhYV-1" value="Slanje obaveštenja vlasniku" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="80" y="40" width="160" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="7jMima4y7M2qxOUPILjF-1" value="&lt;font style=&quot;font-size: 14px;&quot;&gt;&lt;b&gt;Preduslov:&lt;/b&gt; Postoji vlasnik smeštaja na unetoj lokaciji&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="15" y="150" width="360" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="7jMima4y7M2qxOUPILjF-2" value="&lt;span style=&quot;font-size: 14px;&quot;&gt;&lt;b&gt;Posledica: &lt;/b&gt;Vlasnici smeštaja su obavešteni o otvaranju foruma na lokaciji na kojoj imaju smeštaj&lt;/span&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="20" y="180" width="620" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="7jMima4y7M2qxOUPILjF-3" value="&lt;span style=&quot;font-size: 14px;&quot;&gt;&lt;b&gt;Osnovni tok:&lt;/b&gt;&lt;br&gt;1. Sistem prepoznaje vlasnike smeštaja na unetoj lokaciji&lt;br&gt;&lt;/span&gt;&lt;div&gt;&lt;span style=&quot;font-size: 14px;&quot;&gt;2. Sistem šalje obaveštenje o novom forumu vlasnicima smeštaja na unetoj lokaciji&lt;br&gt;&lt;/span&gt;&lt;/div&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="30" y="210" width="540" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="7jMima4y7M2qxOUPILjF-5" value="&lt;span style=&quot;font-size: 14px;&quot;&gt;&lt;b&gt;Alternativni tok: Ne postoji vlasnik smeštaja na unetoj lokaciji&lt;/b&gt;&lt;br&gt;1. Sistem ne šalje obaveštenje&lt;/span&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="30" y="270" width="430" height="50" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="2OwjpxUvSQmeIKflXekP" name="Ostavljanje komentara na forumu">
+    <mxGraphModel dx="1050" dy="572" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="8Af9Z9XwHR0MvE_pAK3p-1" value="Ostavljanje komentara na forumu" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="70" y="50" width="160" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="f3eoa4Cz1AUL0THm8zvx-1" value="&lt;font style=&quot;font-size: 14px;&quot;&gt;&lt;b&gt;Preduslov:&lt;/b&gt;&amp;nbsp;Forum je otvoren&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="50" y="160" width="210" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="f3eoa4Cz1AUL0THm8zvx-2" value="&lt;span style=&quot;font-size: 14px;&quot;&gt;&lt;b&gt;Posledice: &lt;/b&gt;Novi komentar je dodat na forum; ukoliko su ispunjeni uslovi, komentar i forum su posebno označeni&lt;/span&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="50" y="190" width="720" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="f3eoa4Cz1AUL0THm8zvx-3" value="&lt;span style=&quot;font-size: 14px;&quot;&gt;&lt;b&gt;Osnovni tok:&lt;/b&gt;&lt;br&gt;1. Korisnik pokreće opciju za ostavljanje komentara&lt;/span&gt;&lt;div&gt;&lt;span style=&quot;font-size: 14px;&quot;&gt;2. Korisnik unosi komentar&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;font-size: 14px;&quot;&gt;3. Korisnik potvrđuje ostavljanje komentara&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;font-size: 14px;&quot;&gt;4. Sistem čuva komentar na forumu&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;font-size: 14px;&quot;&gt;5. Sistem proverava da li je gost nekada bio na zadatoj lokaciji&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;font-size: 14px;&quot;&gt;6. Sistem posebno označava komentar&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;font-size: 14px;&quot;&gt;7. Sistem prikazuje novi komentar&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;font-size: 14px;&quot;&gt;8. Sistem proverava broj komentara&amp;nbsp;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;font-size: 14px;&quot;&gt;9. Sistem označava forum kao veoma koristan&lt;/span&gt;&lt;/div&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="60" y="220" width="410" height="180" as="geometry" />
+        </mxCell>
+        <mxCell id="f3eoa4Cz1AUL0THm8zvx-6" value="&lt;span style=&quot;font-size: 14px;&quot;&gt;&lt;b&gt;Alternativni tok A: Gost nije bio na zadatoj lokaciji&lt;/b&gt;&lt;br&gt;1. Korisnik pokreće opciju za ostavljanje komentara&lt;/span&gt;&lt;div&gt;&lt;span style=&quot;font-size: 14px;&quot;&gt;2. Korisnik unosi komentar&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;font-size: 14px;&quot;&gt;3. Korisnik potvrđuje ostavljanje komentara&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;font-size: 14px;&quot;&gt;4. Sistem čuva komentar na forumu&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;font-size: 14px;&quot;&gt;5. Sistem proverava da li je gost nekada bio na zadatoj lokaciji&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;font-size: 14px;&quot;&gt;6. Sistem prikazuje novi komentar&lt;/span&gt;&lt;/div&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="60" y="400" width="410" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="f3eoa4Cz1AUL0THm8zvx-7" value="&lt;span style=&quot;font-size: 14px;&quot;&gt;&lt;b&gt;Alternativni tok B: Broj komentara na forumu nije &quot;dovoljan&quot;&lt;/b&gt;&lt;br&gt;1. Korisnik pokreće opciju za ostavljanje komentara&lt;/span&gt;&lt;div&gt;&lt;span style=&quot;font-size: 14px;&quot;&gt;2. Korisnik unosi komentar&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;font-size: 14px;&quot;&gt;3. Korisnik potvrđuje ostavljanje komentara&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;font-size: 14px;&quot;&gt;4. Sistem čuva komentar na forumu&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;div&gt;&lt;span style=&quot;font-size: 14px;&quot;&gt;5. Sistem proverava da li je gost nekada bio na zadatoj lokaciji&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;font-size: 14px;&quot;&gt;6. Sistem posebno označava komentar&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;font-size: 14px;&quot;&gt;7. Sistem prikazuje novi komentar&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;font-size: 14px;&quot;&gt;8. Sistem proverava broj komentara gostiju koji su već posetili lokaciju&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;font-size: 14px;&quot;&gt;10. Sistem ne označava forum kao veoma koristan&lt;/span&gt;&lt;/div&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="60" y="530" width="460" height="180" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="QnW6zYKsdnXbqkMrTkRj" name="Provera posete lokaciji">
+    <mxGraphModel dx="1235" dy="673" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <UserObject label="Provera posete lokaciji" id="nARbcAYgBbbBT3C16dv_-1">
+          <mxCell style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+            <mxGeometry x="60" y="30" width="160" height="90" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <mxCell id="wippCZxMcOmsvCwLukO1-1" value="&lt;font style=&quot;font-size: 14px;&quot;&gt;&lt;b&gt;Preduslov:&lt;/b&gt;&amp;nbsp;Korisnik je uneo komentar na forumu&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="50" y="160" width="330" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="wippCZxMcOmsvCwLukO1-2" value="&lt;span style=&quot;font-size: 14px;&quot;&gt;&lt;b&gt;Posledica: &lt;/b&gt;Ako je korisnik posetio lokaciju, komentar je posebno označen&amp;nbsp;&amp;nbsp;&lt;/span&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="52" y="190" width="490" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="wippCZxMcOmsvCwLukO1-3" value="&lt;span style=&quot;font-size: 14px;&quot;&gt;&lt;b&gt;Osnovni tok:&lt;/b&gt;&lt;br&gt;1.&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;font-size: 14px; background-color: initial;&quot;&gt;Sistem proverava da li je gost imao rezervaciju na zadatoj lokaciji&lt;/span&gt;&lt;div&gt;&lt;span style=&quot;font-size: 14px;&quot;&gt;2. Sistem posebno označava komentar&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;font-size: 14px;&quot;&gt;3. Sistem prikazuje novi komentar&lt;/span&gt;&lt;/div&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="60" y="220" width="440" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="wippCZxMcOmsvCwLukO1-4" value="&lt;span style=&quot;font-size: 14px;&quot;&gt;&lt;b&gt;Alternativni tok: Gost nije bio na zadatoj lokaciji&lt;/b&gt;&lt;br&gt;1. Sistem proverava da li je gost imao rezervaciju na zadatoj lokaciji&lt;/span&gt;&lt;div&gt;&lt;span style=&quot;font-size: 14px; background-color: initial;&quot;&gt;2. Sistem prikazuje novi komentar&lt;/span&gt;&lt;/div&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="60" y="300" width="440" height="60" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="mlD73xQFkVZWY43slJA6" name="Označavanje korisnog foruma">
+    <mxGraphModel dx="1050" dy="572" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="KelJ0BdEust9vEoZdqEJ-1" value="&lt;font style=&quot;font-size: 14px;&quot;&gt;&lt;b&gt;Preduslov:&lt;/b&gt;&amp;nbsp;Postoji forum&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="50" y="160" width="180" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="KelJ0BdEust9vEoZdqEJ-2" value="&lt;span style=&quot;font-size: 14px;&quot;&gt;&lt;b&gt;Posledica: &lt;/b&gt;Ukoliko su ispunjeni uslovi, forum je označen kao &quot;veoma koristan&quot;&lt;/span&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="50" y="190" width="510" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="KelJ0BdEust9vEoZdqEJ-3" value="&lt;span style=&quot;font-size: 14px;&quot;&gt;&lt;b&gt;Osnovni tok:&lt;/b&gt;&lt;br&gt;1.&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;font-size: 14px; background-color: initial;&quot;&gt;Sistem proverava broj komentara gostiju koji su već posetili lokaciju&lt;/span&gt;&lt;div&gt;&lt;span style=&quot;font-size: 14px;&quot;&gt;2. Sistem proverava broj komentara vlasnika&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;font-size: 14px;&quot;&gt;3. Sistem označava forum kao veoma koristan&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;font-size: 14px;&quot;&gt;4. Sistem prikazuje forume&lt;/span&gt;&lt;/div&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="60" y="210" width="460" height="100" as="geometry" />
+        </mxCell>
+        <UserObject label="Označavanje korisnog foruma" id="Bq14W-gqeVCbSGrCSvCG-1">
+          <mxCell style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+            <mxGeometry x="75" y="30" width="160" height="90" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <mxCell id="Bq14W-gqeVCbSGrCSvCG-3" value="&lt;span style=&quot;font-size: 14px;&quot;&gt;&lt;b&gt;Alternativni tok: Broj komentara &quot;nije dovoljan&quot;&lt;/b&gt;&lt;br&gt;1.&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;font-size: 14px; background-color: initial;&quot;&gt;Sistem proverava broj komentara gostiju koji su već posetili lokaciju&lt;/span&gt;&lt;div&gt;&lt;span style=&quot;font-size: 14px;&quot;&gt;2. Sistem proverava broj komentara vlasnika&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;font-size: 14px;&quot;&gt;3. Sistem prikazuje forume&lt;/span&gt;&lt;/div&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="60" y="300" width="460" height="80" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
